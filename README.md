@@ -17,9 +17,8 @@ Author Carpentry at FSCI 2019: Reproducible Research Reporting and Dynamic Docum
 
 1. [Day 1: Introduction](01-getting-started.html)
 2. [Day 2: Basic Markdown](02-markdown.html)
-3. [Day 3: Document Appearance](03-modifying-appearance.html)
-4. [Day 4: Dynamic Documents](04-dynamic.html)
-5. [Day 5: Publishing](05-publishing.html)
+4. [Day 3: Dynamic Documents](03-dynamic.html)
+5. [Day 4: Publishing](04-publishing.html)
 
 ## Requirements
 
@@ -28,6 +27,6 @@ their own computers to insure the proper setup of tools for an efficient
 workflow.
 *These lessons assume no prior knowledge of the skills or tools*, but working
 through this lesson requires working copies of R and Rstudio.
-We'll work through software installation during the first day. 
+We'll work through any software installation problems during the first day. 
 
                    
