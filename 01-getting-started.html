@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Author Carpentry</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<header>
+<a href="http://authorcarpentry.github.io"><img src="img/AClogo.jpg" alt="Author Carpentry logo"></a>
+</header>
+<nav>
+<ul>
+<li><a href=".">Lesson</a></li>
+<li><a href="01-getting-started.html">Day 1: Getting Started</a></li>
+<li><a href="02-markdown.html">Day 2: Intro to Markdown</a></li>
+<li><a href="03-modifying-appearance.html">Day 3: Document Appearance</a></li>
+<li><a href="04-dynamic.html">Day 4: Dynamic Documents</a></li>
+<li><a href="05-publishing.html">Day 5: Publishing</a></li>
+<li><a href="mailto:authorcarpentry@library.caltech.edu">Contact Us</a></li>
+</ul>
+
+</nav>
+
+<section>
+<h1>Introduction to Reproducible and Dynamic Reporting</h1>
+
+<p>2 Hours</p>
+
+<hr />
+
+<h2>Learning Objectives</h2>
+
+<ul>
+<li>Meet instructors and other course participants</li>
+<li>Describe common tools for producing and publishing a research report</li>
+<li>Discuss elements of a reproducible research report</li>
+<li>Explore a real-life reproducible research report</li>
+<li>Install software needed for this course</li>
+<li>Render a provided reproducible report to multiple outputs using Rstudio, <code>Rmarkdown</code>, and the <code>knitr</code> package</li>
+</ul>
+
+<hr />
+
+<h2>Introductions</h2>
+
+<p>Please share the following:</p>
+
+<ul>
+<li>Name</li>
+<li>Professional position</li>
+<li>One pet peeve about current practices around research communication (authoring, reviewing, or publishing)</li>
+</ul>
+
+<h2>Group Discussion</h2>
+
+<p>Automation or transformation: has the research paper changed much in the last 350 years (or why static PDFs are an underwhelming use of today&rsquo;s technology)</p>
+
+<p><img src="img/RSjournal.jpeg" alt="Maxwell's discovery of the electromagnetic properties of light" /></p>
+
+<p>Original manuscript of James Clerk Maxwell&rsquo;s paper on &lsquo;A dynamical theory of the electromagnetic field&rsquo; published in the oldest scientific journal, <em>Philosophical Transactions</em>, in 1685. According to the publisher, the Royal Society:</p>
+
+<blockquote>
+<p>The final sentence on this page records his crucial revelation regarding the nature of light: &lsquo;The agreement of the results seems to show that light and magnetism are affections of the same substance and that light is an electromagnetic disturbance propagated through the field according to electromagnetic laws.&rsquo; (source: <a href="https://www.theguardian.com/higher-education-network/gallery/2015/feb/12/philosophical-transactions-of-the-royal-society-350-years-of-science-publishing-in-pictures">https://www.theguardian.com/higher-education-network/gallery/2015/feb/12/philosophical-transactions-of-the-royal-society-350-years-of-science-publishing-in-pictures</a>)</p>
+</blockquote>
+
+<p>Photograph: Royal Society&rsquo;s collections</p>
+
+<h3>Transforming the scholarly record: what are the <em>must haves</em> of a research report?</h3>
+
+<ol>
+<li>Registration of the author&rsquo;s claim</li>
+<li>Certification that the research was conducted properly</li>
+<li>Dissemination of the work to the right audiences</li>
+<li>Preservation to ensure a permanent public record of the work that can be found and cited</li>
+</ol>
+
+<p>Source: Rallison, S.P., &lsquo;What are Journals For?&rsquo;, <em>Ann R Coll Surg Engl.</em> 2015 Mar; 97(2): 89-91. DOI: 10.1308/003588414X14055925061397</p>
+
+<h2>How can authors fulfill these requirements while making their research reports more Findable, Accessible, Interoperable, and Re-Useable/Reproducible?</h2>
+
+<p>Now we&rsquo;ll show you the final result (on our machine).</p>
+
+<p>The first step in getting this dynmaic document is installing some software!</p>
+
+<h2>Software Installation</h2>
+
+<p>R is a programming language that is especially powerful for data exploration,
+visualization, and statistical analysis. To interact with R, we use RStudio.
+For this workshop you&rsquo;ll need to install both R (version 3.4.3 or newer) and
+RStudio on your computer.</p>
+
+<h3>Windows</h3>
+
+<p>Install R by downloading and running this
+<a href="https://cran.r-project.org/bin/windows/base/release.htm">.exe</a> file from CRAN.
+Also, please install the <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio
+IDE</a>.
+Note that if you have separate user and admin accounts, you should run the
+installers as administrator (right-click on .exe file and select &ldquo;Run as administrator&rdquo;
+instead of double-clicking). Otherwise problems may occur later, for example when installing R packages.</p>
+
+<h3>macOS</h3>
+
+<p>Install R by downloading and running this
+<a href="https://cran.r-project.org/bin/macosx/R-latest.pkg">.pkg</a> file from CRAN. Also,
+please install the <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio
+IDE</a>.</p>
+
+<h3>Linux</h3>
+
+<p>You can download the binary files for your distribution from
+<a href="https://cran.r-project.org/index.html">CRAN</a>. Or you can use your package
+manager (e.g. for Debian/Ubuntu run sudo apt-get install r-base and for
+Fedora run sudo dnf install R). Also, please install the <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio
+IDE</a>.</p>
+
+<h2>Workshop Files</h2>
+
+<p>You also need to download some files for this workshop:</p>
+
+<ol>
+<li>Download <a href="/FSCI-2018/data/FSCI-2018-files.zip">this zip file</a> and move
+the file to your desktop.</li>
+<li>If it&rsquo;s not unzipped yet, double-click on it to unzip it. You should end up
+with a new folder called <code>FSCI-2018-files</code>.</li>
+</ol>
+
+<h2>Intro to RStudio and knitting documents</h2>
+
+<p>Now open Rstudio (Applications/Rstudio).  Rstudio is the development
+environment where we&rsquo;ll be working on our document.  The main panel you&rsquo;ll see
+on the left is the Console, where you can run R code.  On the right is two
+panels - the upper contains your environment (what R can access), and the lower
+contains the files on your computer.</p>
+
+<p>The first thing to do is install some packages.  RStudio makes it easy to
+install new packages to do things you want.  You can find packages by going to
+the &lsquo;Packages&rsquo; tab in the lower right panel.  You can install new packages by
+clicking the Install button and typing in the package name.  For this workshop
+we&rsquo;ll need the following packages:</p>
+
+<ul>
+<li><code>tidyverse</code></li>
+<li><code>DT</code></li>
+<li><code>rorcid</code></li>
+<li><code>httpuv</code></li>
+</ul>
+
+<p>Now let&rsquo;s actually work with a document.  Click in the Files tab in the lower
+right panel.  The file view in RStudio is just like
+navigating in finder or windows explorer.  Let&rsquo;s find the <code>FSCI-2018-files</code>
+folder we downloaded above.  Go to Desktop and <code>FSCI-2018-files</code>.  You&rsquo;ll see
+lots of files we&rsquo;ll use during the workshop.  Double click on
+<code>Base_2013_day1_in.Rmd</code>.</p>
+
+<p>You&rsquo;ll see the document open in a new panel on the left hand side of the
+screen.  This is an editor window, and you can change things in the document
+here.  For now, just change the name in the document to your name.</p>
+
+<p>Knitting is a process in Rstudio that takes a text document and turns it into
+an output (like html, docx, or html slides).  Now click the knit button in the upper
+left hand corner of the editor.    The first
+time you do this you&rsquo;ll get a message that you need to install some packages.
+You&rsquo;ll want to click Yes and wait for the packages to install.  Once the
+installation you&rsquo;ll see an interactive demonstration document!</p>
+
+<p>You can output this single file in multiple formats.  By default we&rsquo;ve been
+generating .html files, but we can also output to a word document.  If you
+click on the downward arrow next to the knit button we see some default
+formats.  Click on Word, and a word document will appear.</p>
+
+<p>While pdf is an option, this requires a TeX distribution which is complex to
+install and beyond the scope of  this course.</p>
+
+<p>You can also select other output forms that aren&rsquo;t listed in the <code>knitr</code>
+dropdown.  Take a look at the document.  You&rsquo;ll see in the top a section called
+<code>output</code> with sections under it like <code>html_document</code>.  If we change the top
+output knit will produce a different result.  Try replacing <code>word_document</code>
+with <code>slidy_presentation</code>.  This is a html presentation that you can use in
+any web browser.</p>
+
+<p>Tomorrow we&rsquo;ll start working with an actual research report !</p>
+
+<p>Next: <a href="02-markdown.html">Basic Markdown</a></p>
+
+</section>
+
+<footer>
+<span>&copy; Lesson Contributors</span>
+<span><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img
+alt="Creative Commons License" style="vertical-align: middle;"
+src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a></span>
+<span>This work is licensed under a <a rel="license"
+href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution
+4.0 International License</a></span>
+</footer>
+</body>
+</html>

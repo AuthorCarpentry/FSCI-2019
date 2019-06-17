@@ -1,0 +1,8 @@
+
+## Complete dataset `doaj_seal.csv` {#annex-table}
+
+
+The complete data set is available in searchable and  broweseable format as [Annex 10.1](#annex-table) at the end of this document. 
+
+
+

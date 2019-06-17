@@ -1,0 +1,17 @@
+---
+title: "outputs-child.Rmd"
+output: html_document
+---
+
+| Output # | Digital Output | Type  | Format/Duration/size | Planned access|
+|:------:|:-----|:---------|:------|:---------|
+|1| doaj_seal.csv | raw dataset downloaded from DOAJ site | CSV file, plain text format, 2.7 MB   | Not retained since duplicative  |
+|2| doaj_seal_enhanced.csv | enhanced dataset with new data | CSV file, plain text format, 2.7 MB   | GitHub repository; Zenodo repository  |
+|3| Dataset documentation | json metadata file | plain text file, .1 MB | Datacite registry database; GitHub public repository; Zenodo repository |
+|4| Data Processing steps  | R scripts and comments | R Notebook file, 1 MB | GitHub public repository |
+|5| Data Visualizations  | R scripts and documentation; Plots | R Notebook file, .png image files 4 MB | GitHub public repository |
+
+Add the following final row of data to the pipe table above:  
+
+5 | Journal article | Final marked-up text file, code and plots; and rendered output per publisher requirements (likely Word or PDF) | RMarkdown, 9 MB |
+Publisher website (open access); Preprint server |

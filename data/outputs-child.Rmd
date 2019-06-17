@@ -1,0 +1,33 @@
+---
+title: "outputs-child.Rmd"
+output: html_document
+---
+
+
+
++-----------+------------------+-------------+-----------------+---------------+
+|Output ID  |Output            |   Type      |Format, Size     | Planned Access|
++===========+==================+=============+=================+===============+
+|1          |downloaded data   | text        | csv, 2.7 MB     | not retained  |
++-----------+------------------+-------------+-----------------+---------------+
+|2          |combined data     | text        | csv, 3.8 MB     | GitHub Repo   |
++-----------+------------------+-------------+-----------------+---------------+
+|3          |Data documentation| text        | html, 750 kb    |               |
++-----------+------------------+-------------+-----------------+---------------+
+|4          |Data processing   | - text      | nb file, 1 MB   | GitHub Repo   |
+|           |steps in R Notebk | - images    | png file, 2 MB  |               |
+|           |                  |             |                 |               |
++-----------+------------------+-------------+-----------------+---------------+
+
+
+`Adjoin the final row to the table` so that it will knit clean
+
+
+
+|5      |Journal Article   | - text      | - rmd file, 1 MB| - GitHub Repo |
+|           | with supplements | - images    | - pdf file, 2 MB| - Zenodo Repo   |
+|           |                  | - processed | - csv file, 3 MB| - Publisher   |
+|           |                  |  data       |           |     website      |
++-----------+------------------+-------------+-----+------------+---------------+
+
+

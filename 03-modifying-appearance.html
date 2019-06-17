@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Author Carpentry</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<header>
+<a href="http://authorcarpentry.github.io"><img src="img/AClogo.jpg" alt="Author Carpentry logo"></a>
+</header>
+<nav>
+<ul>
+<li><a href=".">Lesson</a></li>
+<li><a href="01-getting-started.html">Day 1: Getting Started</a></li>
+<li><a href="02-markdown.html">Day 2: Intro to Markdown</a></li>
+<li><a href="03-modifying-appearance.html">Day 3: Document Appearance</a></li>
+<li><a href="04-dynamic.html">Day 4: Dynamic Documents</a></li>
+<li><a href="05-publishing.html">Day 5: Publishing</a></li>
+<li><a href="mailto:authorcarpentry@library.caltech.edu">Contact Us</a></li>
+</ul>
+
+</nav>
+
+<section>
+<h1>Modifying Document Appearance</h1>
+
+<p>3 Hours</p>
+
+<hr />
+
+<p>The <code>knitr</code> package gives you lots of options for changing how your document looks.</p>
+
+<h2>Learning Objectives</h2>
+
+<ul>
+<li>Show how to modify document sections</li>
+<li>Modify specific document formatting</li>
+<li>Learn how code can be integrated in a document</li>
+<li>Add references to a document</li>
+<li>Manage sub-documents</li>
+<li>Include equations in your document</li>
+</ul>
+
+<hr />
+
+<h2>Document Sections</h2>
+
+<p>We have lots of sections in our document; it would be nice if these were
+listed in a table of contents and numbered so we could easily refer to a
+specific section.  We don&rsquo;t want to have to manually update the table of
+contents or renumber everything when we move sections around; we want <code>knitr</code> to do as much as possible automagically.</p>
+
+<p>In order to customize the appearance of our document, we need to pass
+information to <code>knitr</code> about what we want.  We use the YAML header, where we
+customized the title and author, in order to set specific options.</p>
+
+<h3>Table of Contents</h3>
+
+<p>In the YAML we have a number of output formats.  You&rsquo;ll notice when you change
+the <code>knitr</code> output format that the format you&rsquo;re interested in moves to the top
+of the list.  We can make customizations to the format by removing the word
+<code>default</code> after the format and including an indented list of options.  If we
+want to include a table of contents, we add the option <code>toc: yes</code> to both the
+<code>word_document</code> and <code>html_document</code> formats.  Then use the knit button to see
+the results.</p>
+
+<p>There are options that impact the appearance of the TOC.  For example, you can
+remove a layer of TOC dub-sections (like &lsquo;Metadata&rsquo; under Data being collected) by using the
+option <code>toc_depth: 2</code></p>
+
+<h3>Section Numbers and Formatting</h3>
+
+<p>Section numbering is where the behavior of different formats starts to diverge.
+To add section numbers to our HTML document we just need to add the option
+<code>number_sections: yes</code>.  We can also have the TOC appear as a document sidebar
+by adding <code>toc_float: yes</code> to our options.</p>
+
+<p>For the Word document, section numbering is controlled by the document theme
+(below).</p>
+
+<h2>Document Themes and Custom Formatting</h2>
+
+<h3>HTML</h3>
+
+<p>The <code>knitr</code> package supports built-in themes that format the overall document. <a href="https://bootswatch.com/3/">Click
+here to view available themes</a>.  You can control
+which theme is used for the document by adding <code>theme: readable</code>.  Try
+switching our a different theme and see what happens!</p>
+
+<p>These themes are built using standard web Cscading Style Sheets (CSS).  If we don&rsquo;t like how any of the built in themes look, we can add a CSS style sheet to make specific changes.  In our exercise file document, the quoted text looks too big; the font is larger than the surrounding text!  We&rsquo;ll control this oddity with a style sheet. To do so, make a
+text file by going to <code>File/New File/Text File</code> in RStudio.  This will open up
+an editor window where you can paste the following CSS code chunk:</p>
+
+<pre><code>blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 14px;
+    border-left: 5px solid #eee;
+}
+</code></pre>
+
+<p>This will edit the spacing and font size of all the quotes in the document. You
+can use similar standard CSS to modify the appearance of all other elements in
+your document. Remember markdown is really just an easy way of indicating HTML
+tags, and CSS lets you modify those tags.</p>
+
+<p>When you have a completed css file, click the save icon and save the file
+as <code>custom.css</code>.  Note that you can call the file anything you want, but it&rsquo;s
+good to include the css extension.  You can then load this file in your
+document by adding the option <code>css: custom.css</code> to your YAML header.</p>
+
+<h3>Word</h3>
+
+<p>You can customize Word document styling, such as fonts, sizing, and section
+numbering, within the  Word program.  You can then provide <code>knitr</code> with the stylized Word document to use as a style sheet of sorts .  Because editing word document styling
+is a pain, we&rsquo;ve created a Word document with section numbering that you can use.
+You just need to add <code>reference_docx: &quot;Base_2013_day3_style.docx&quot;</code> to the YAML
+header for the <code>word_document</code> type and knit to see the result.</p>
+
+<h2>Integrated Code</h2>
+
+<p>The benefit of using Rstudio to author reports is that you have the
+ability to perform computation, live within the document.  First, let&rsquo;s load some
+data into our exercise file.  Look at the top of the file where the DOAJ data is
+imported in a code chunk.  Code chunks are demarcated by three tics ```.  The first group
+of tics is followed by a label that indicates the type of code and a
+description.  So, the label in this example is <code>{r add_dataset}</code>.  You&rsquo;ll see
+RStudio makes pretty formatting around the code chunk.  There are options for
+each chunk, and you can run the code by clicking the green arrow.  Then you
+press the arrow, you&rsquo;ll notice an output message and a change in the right
+&lsquo;Environment&rsquo; section of RStudio.  The message is the output from the
+operation, and the right panel shows that the data file has been loaded.  You
+can hide the output message by clicking on the up arrow or modifying the options
+so that <code>message=FALSE</code>.</p>
+
+<p>Let&rsquo;s add a new code chunk that will do something fun! At the bottom of the
+&lsquo;Project Description&rsquo; add a new code chunk with the label <code>{r plot_country,echo= FALSE,fig.width=10,fig.height=11}</code></p>
+
+<p>Open <code>insert_day3a.txt</code> and copy the code to the body of the code chunk.</p>
+
+<p>Hit the green button and you&rsquo;ll see a plot appear, generated by the <code>ggplot2</code> package.  When you knit the document,
+this code will also execute and place a plot in the document.</p>
+
+<p>We can do the same thing to generate additional plots.  Add the code from
+`insert_day3b.txt with the
+label &lsquo;plot_license&rsquo; before the section on Metadata.</p>
+
+<h2>References</h2>
+
+<p>References are another area of document preparation where automation is really
+helpful.  References in <code>knitr</code> are handled with BibtTx files (.bib). BibTex is a
+reasonably standard format that can be produced by most reference managers and
+online services.  We&rsquo;ve provided the bibliography <code>oajournals.bib</code> file for you to work with
+during this course.  There is an entire section of the YAML header called <code>bibliography</code> that handles
+references . You then provide<code>knitr</code> with the name of the
+BibTex file, for example:</p>
+
+<pre><code>bibliography:
+- oajournals.bib
+</code></pre>
+
+<p>Let&rsquo;s open our <code>oajournals.bib</code> file and see what it looks like.  You&rsquo;ll see
+citation information about each article in groups indicated by a document type tag, e.g.,  <code>@article</code>, followed by a unique citation key (typically the last name of an author and the year of publication e.g. Yound_2015), followed by citation information.  If you look at the exercise document, you&rsquo;ll note that all of the citations have thus far been written manually (e.g., Castro et al
+(2017)).  We&rsquo;ll want to replace them by machine readable tags that <code>knitr</code> will
+be able to combine into a Reference List at the end of the report.  We use the @ symbol to indicate a
+reference, so replace each reference with the appropriate tag, for example
+<code>@Castro_2017</code>.</p>
+
+<p>The reference list is automatically added to the end of the document, so we can
+delete the dummy references that were there.  You&rsquo;ll notice that
+<code>Vasilevsky_2017</code> showed up in the text as <code>n.d.</code>, even though it&rsquo;s in the
+reference list.  If we look in the BibTex file, we see that no authors and date
+are defined for this reference.  <code>Knitr</code> tries its best, but won&rsquo;t correct or complete referendes if the proper data is not available in the <code>.bib</code> file.</p>
+
+<p>Let&rsquo;s fix the problem by grabbing a correct .bib file.  One great source is the
+DOI registration agencies.  Put the DOI for <code>Vasilevsky_2017</code>,
+<code>10.7717/peerj.3208</code> into the <a href="https://citation.crosscite.org/">cross cite
+service</a> and select bibtex as the citation
+style.  Copy the bibtex into oajournals.bib, change the long default citation
+key to <code>Vasilevsky_2017</code>, and see how the citation is now correct.</p>
+
+<h2>Embedded Sub-Documents and Math</h2>
+
+<p>To date we&rsquo;ve been writing everything in one Rmarkdown document.  We can
+actually build our document from sub-documents that <code>knitr</code> will integrate into
+the output.  The sub-documents (aka child documents) do not have to contain a complete YAML header because they are designed to be intergrated into the &lsquo;main document&rsquo; or &lsquo;parent&rsquo; at knit time.</p>
+
+<p>To see how this works, find a document in your folder called <code>equations-child.Rmd</code>.  You
+can see that this file has a minimal header followed by some
+Rmarkdown text.  You&rsquo;ll also see some equations written in LateX.  That&rsquo;s
+right; you can write LateX within an RMarkdown document and it will get correctly formatted at knit time.</p>
+
+<p>Let&rsquo;s add the child document at the end of the &lsquo;Project Description&rsquo;.  You
+add child documents with a code chunk, and include the document location in the
+label, for example: <code>{r equations, child = &quot;equations-child.Rmd&quot;}</code>.</p>
+
+<p>When you knit you get nicely formatted equation in both Html and Word.</p>
+
+<p>Using multiple child-documents is a convenient and tidy way to manage multiple sections in a single long report. Each section can be authored and tested seperately without bogging <code>knitr</code> down with one long scrolling document. Additionally, if just one section needs to be changed or updated over time, the parent-child authoring approach isolates the change to the necessary file without opening (and possibly introducing errors inadvertenly) to the longer parent.</p>
+
+<p>Previous: <a href="02-markdown.html">Getting Started with Markdown</a> Next: <a href="04-dynamic.html">Dynamic Documents</a></p>
+
+</section>
+
+<footer>
+<span>&copy; Lesson Contributors</span>
+<span><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img
+alt="Creative Commons License" style="vertical-align: middle;"
+src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a></span>
+<span>This work is licensed under a <a rel="license"
+href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution
+4.0 International License</a></span>
+</footer>
+</body>
+</html>

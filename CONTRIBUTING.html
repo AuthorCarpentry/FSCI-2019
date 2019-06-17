@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Author Carpentry</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<header>
+<a href="http://authorcarpentry.github.io"><img src="img/AClogo.jpg" alt="Author Carpentry logo"></a>
+</header>
+<nav>
+<ul>
+<li><a href=".">Lesson</a></li>
+<li><a href="01-getting-started.html">Day 1: Getting Started</a></li>
+<li><a href="02-markdown.html">Day 2: Intro to Markdown</a></li>
+<li><a href="03-modifying-appearance.html">Day 3: Document Appearance</a></li>
+<li><a href="04-dynamic.html">Day 4: Dynamic Documents</a></li>
+<li><a href="05-publishing.html">Day 5: Publishing</a></li>
+<li><a href="mailto:authorcarpentry@library.caltech.edu">Contact Us</a></li>
+</ul>
+
+</nav>
+
+<section>
+<h1>Contributing</h1>
+
+<p><a href="http://authorcarpentry.github.io">AuthorCarpentry</a> is an open source project,
+and we welcome contributions of all kinds:
+new lessons,
+fixes to existing material,
+bug reports,
+and reviews of proposed changes are all welcome.</p>
+
+<h2>Contributor Agreement</h2>
+
+<p>By contributing,
+you agree that we may redistribute your work under <a href="LICENSE.md">our license</a>.
+In exchange,
+we will address your issues and/or assess your change proposal as promptly as we can,
+and help you become a member of our community.
+Everyone involved in <a href="http://authorcarpentry.github.io">Author Carpentry</a>
+agrees to abide by our <a href="CONDUCT.md">code of conduct</a>.</p>
+
+<h2>Editing Lesson Content</h2>
+
+<p>All lesson content is written in markdown (.md) files.  We use <a href="https://github.com/caltechlibrary/mkpage">mkpage</a>
+to render lesson content into .html pages.  Install mkpage from the Caltech
+Library repository at <a href="https://github.com/caltechlibrary/mkpage">https://github.com/caltechlibrary/mkpage</a>.  There is
+a different mkpage available via rpm that won&rsquo;t work for our application.
+While GitHub can render content, we use mkpage so lesson content can
+be viewed independent from a web connection.</p>
+
+<h2>Working With GitHub</h2>
+
+<ol>
+<li><p>Fork the <code>authorcarpentry/lesson-name</code> repository on GitHub.</p></li>
+
+<li><p>Clone the repository to your local computer by using the &ldquo;Clone&rdquo;
+link at the top left corner of the repository page.  In a local
+terminal window type &lsquo;git clone <em>link</em>&lsquo;</p></li>
+
+<li><p>Make your changes to the .md files using your favorite text editor.</p></li>
+
+<li><p>Render your content by typing ./mk-website.bash</p></li>
+
+<li><p>(Optional) View your changes locally by typing &lsquo;ws&rsquo; and pointing your web browser to <a href="http://localhost:8000">http://localhost:8000</a></p></li>
+
+<li><p>Upload your changes to your GitHub account by typing ./publish.bash (Does a
+git commit and push)</p></li>
+
+<li><p>On the your GitHub repository site &lsquo;<a href="https://github.com/username/lesson-name'">https://github.com/username/lesson-name'</a> add a new branch by using the branch
+dropdown.  Choose something that describes the changes you&rsquo;ve made like <code>fixing-typos-in-shell-lesson</code>
+or <code>adding-tutorial-on-visualization</code>.</p></li>
+
+<li><p>Submit a pull request by clicking the &lsquo;New pull request&rsquo; button, right next
+to the branch dropdown.</p></li>
+</ol>
+
+<p>If it is easier for you to send them to us some other way,
+please mail us at <a href="mailto:authorcarpentry@library.caltech.edu">authorcarpentry@library.caltech.edu</a>.
+Given a choice between you creating content or wrestling with Git,
+we&rsquo;d rather have you doing the former.</p>
+
+<h2>Locations and Formats</h2>
+
+<p>Every lesson has a repository of its own, while individual topics are files
+in that directory.  For example, the <code>shell-ecology</code> directory holding our
+introduction to the shell for ecology contains the files <code>00-intro.md</code>,
+<code>01-filedir.md</code> and so on.  (We use two digits followed by a one-word topic
+key to ensure files
+appear in the right order when listed.)</p>
+
+<h2>Formatting of the material</h2>
+
+<p>To ensure a consistent formatting of the lessons, we recommend the following
+guidelines:</p>
+
+<ul>
+<li>No trailing white space</li>
+<li>Wrap lines at 80 characters (unless it breaks URLs)</li>
+</ul>
+
+<h2>FAQ</h2>
+
+<p><em>Where can I get help?</em></p>
+
+<p>Mail us at <a href="mailto:authorcarpentry@library.caltech.edu">authorcarpentry@library.caltech.edu</a></p>
+
+</section>
+
+<footer>
+<span>&copy; Lesson Contributors</span>
+<span><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img
+alt="Creative Commons License" style="vertical-align: middle;"
+src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a></span>
+<span>This work is licensed under a <a rel="license"
+href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution
+4.0 International License</a></span>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1 @@
+The `doaj_seal.csv` data set currently includes `r nrow(doaj_seal)` reputable open access journals that we will investigate in this study.

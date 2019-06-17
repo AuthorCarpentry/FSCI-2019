@@ -1,0 +1,79 @@
+---
+title: "Repro Reporting Under the Hood"
+subtitle: "Relationship between R Markdown, Knitr, and Pandoc"
+author: "Gail Clement"
+date: "July 10, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Introduction
+
+The Reproducible Reporting pipeline promoted by AuthorCarpentry relies on a stack of technologies that work together to make plain text authoring simple, reliable, enjoyable, and powerful. This conceptual stack is represented below.(Figure copied from RStudio, "How It Works", https://rmarkdown.rstudio.com/lesson-2.html)
+
+![Rmarkdown workflow](rmarkdownflow.png)
+
+# Workflow Components
+
+## RMarkdown
+
+Markdown is a set of simple markup annotations for plain text files. R Markdown files (`.Rmd`) rely on a variant of Markdown known as [Pandoc's Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown). 
+
+
+According to RStudio's [Markdown Basics](https://rmarkdown.rstudio.com/lesson-8.html) tutorial, you can use Pandoc's Markdown to create the following elements in an RMarkdown file:
+
+* Headers
+* Lists
+* Links
+* Images
+* Block quotes
+* Latex equations
+* Horizontal rules
+* Pipe tables
+* Footnotes
+* Bibliographies and Citations
+* Slide breaks
+* Italicized text
+* Bold text
+* Superscripts
+* Subscripts
+* Strikethrough text
+
+To create and save generic markdown files (`.md`) for use in markdown-native platforms, e.g., GitHub, you will need to configure your YAML 
+
+### Recommended resources on RMarkdown
+
+* RStudio, *RMarkdown Homepage*, https://rmarkdown.rstudio.com/  
+* ShareLaTex, *Mathematcal Expressions in LaTex*, https://www.sharelatex.com/learn/Mathematical_expressions  
+* RStudio *RMarkdown Formats*, https://rmarkdown.rstudio.com/formats.html
+* Yihui Xie, J. J. Allaire, and Garrett Grolemund, 2018.  *R Markdown: The Definitive Guide*, https://bookdown.org/yihui/rmarkdown/
+
+*****
+
+## Knitr
+
+Knitr is an R package that executes all of the code chunks and inline code in an Rmarkdown document. It then creates a new markdown (`.md`) document which includes the code and its output. 
+
+### Recommended resources on Knitr
+
+* Yihui Xie, *knitr: elegant, flexible, and fast dynamic report generation with R*, https://yihui.name/knitr/  
+* Yihui Xie, *Dynamic Documents with R and knitr*, Second Edition (Chapman & Hall/CRC The R Series) 2nd Edition, also online at: https://github.com/yihui/knitr-book
+
+*****
+
+## Pandoc
+
+Pandoc is considered the swiss army knife of document converters because it can transform a number of different markup formats such as .md or .html to many other formats, such as .doc, .pdf, html_slides, etc. Pandoc is also able to render rferences in a document to properly-formatted citations that follow a particular citation style.
+
+Pandoc is a command line tool that is independent from R. However, it comes bundled with R Studio because Rmarkdown relies on it for document conversion.
+
+### Recommended resources on Pandoc
+
+* *Pandoc, A Universal Document Converter*, https://pandoc.org/
+
+
+*****
+
+

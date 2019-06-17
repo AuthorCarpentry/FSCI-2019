@@ -1,0 +1,71 @@
+---
+title: "Data Management Plan for the Study _Do Reputable Open Access Journals Require Open Data Sharing?_"
+author: "Gail Clement and Tom Morrell"
+date: "August 2, 2018"
+output: 
+    html_document:
+        toc: true
+        toc_float: true
+bibliography: oajournals.bib
+---
+
+*****
+
+```{r setup, include=FALSE, echo = FALSE}
+
+# Load packages used in this exercise
+library(tidyverse)
+library(rmarkdown)
+library(DT)
+```
+
+```{r global_options, include=FALSE}
+# Set global options for chunk options
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE,message=FALSE, cache=FALSE)
+```
+
+```{r add_dataset}
+# Add the dataset of DOAJ Seal journals
+
+doaj_seal <- read_csv('DOAJ_Seal.csv')
+
+```
+
+# Introduction
+
+This study analyzes the submission requirements of the most reputable open access journals to determine the prevalence and characteristics of data sharing policies. This question is an important one for 21^st^ century authors and readers because open data sharing is seen as a key component of open and more trusted scientific record.
+
+## Purpose of this Study
+
+This study investigates whether the **most reputable Open Access journals** have data sharing polices and the characteristics of those policies. These policies require authors, in some fashion, to openly disseminate the data and software underlying their published articles. 
+Our investigation builds on the recent work of Castro et al [-@Castro_2017] who assessed the prevalence and characteristics of data sharing policies from randomly-selected, English-language, open access journals. Their findings reveal that only a small minority of these journals have data sharing policies. These findings -- which are consistent with those of other studies [see for example, @Vasilevsky_2017] -- may be skewed because of the authors' rules of inclusion and exclusion ^[in particular, the choice to include open access journals merely because of their use of the Open Journal Systems (OJS) hosting platform; the choice to exclude non_English language journals].
+
+
+## Methodology
+
+In this study, we will include only the most reputable open access journals in our assessment  of journal sharing policies, reglardless of language. We will analyze all journals that have attained the Seal of Approval from the [_**Directory of Open Access Journals, DOAJ**_](http://doaj.org) (shown below). We will apply the same coding framework devised by @Castro_2017 to the DOAJ Seal journals. We contend that a more rigorously screened population of open access journals, regardles of language, will yield a more accurate and reproducible set of findings than those published from @Castro_2017.
+
+Moreover, the DOAJ Seal journals do include over 200 non-English language journals that merit analysis in this study. Excluding these from the analysis represents cultural bias that undermines reliable research. The following plot of DOAJ Seal Journals by Country indicates the problem.
+
+```{r plot_country, echo= FALSE, fig.width=10,fig.height=11}
+
+doaj <- read.csv(file = "DOAJ_Seal.csv", header = TRUE)
+ggplot(data=doaj, aes(doaj$PubCountry, fill=doaj$PubCountry)) + stat_count() + labs(x="Country", y="Count") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+```
+
+
+A sample of the `doaj_seal.csv` data set is shown below.  
+
+```{r}
+knitr::kable(head(doaj_seal, 4), caption = 'A Table of the first 4 rows of the DOAJ Seal data.')
+```
+
+# Results
+
+```{r plot_license, echo= FALSE, fig.width=10,fig.height=11}
+
+doaj <- read.csv(file = "DOAJ_Seal.csv", header = TRUE)
+ggplot(data=doaj, aes(doaj$JnlLicense, fill=doaj$JnlLicense)) + stat_count() + labs(x="License", y="Count", title = "DOAJ Seal by Country") 
+```
+
+# References

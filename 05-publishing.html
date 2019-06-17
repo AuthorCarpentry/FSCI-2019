@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Author Carpentry</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<header>
+<a href="http://authorcarpentry.github.io"><img src="img/AClogo.jpg" alt="Author Carpentry logo"></a>
+</header>
+<nav>
+<ul>
+<li><a href=".">Lesson</a></li>
+<li><a href="01-getting-started.html">Day 1: Getting Started</a></li>
+<li><a href="02-markdown.html">Day 2: Intro to Markdown</a></li>
+<li><a href="03-modifying-appearance.html">Day 3: Document Appearance</a></li>
+<li><a href="04-dynamic.html">Day 4: Dynamic Documents</a></li>
+<li><a href="05-publishing.html">Day 5: Publishing</a></li>
+<li><a href="mailto:authorcarpentry@library.caltech.edu">Contact Us</a></li>
+</ul>
+
+</nav>
+
+<section>
+<h1>Publishing</h1>
+
+<p>3 hours</p>
+
+<hr />
+
+<h2>Learning Objectives</h2>
+
+<ul>
+<li>Publish your document to Rpubs</li>
+<li>Publish your document and code via GitHub</li>
+<li>Understand how Binder can help make your publication more reusable</li>
+</ul>
+
+<h3>Rpubs</h3>
+
+<p>Open your document in Rstudio.  Click Knit.  You&rsquo;ll see a publish button in the
+item view pane - click it.  You&rsquo;ll be redirected to the rpubs web site.  If you
+don&rsquo;t have an account you&rsquo;ll need to register.  You&rsquo;ll see a screen with basic
+metadata, but all is optional.  Your document is published online!</p>
+
+<h3>GitHub</h3>
+
+<p>Sign up for GitHub if you don&rsquo;t have an account.  Create a new repository (the
+name doesn&rsquo;t mater) and make sure to check the box for Initialize this repo
+with a README file.  Open Finder of Windows explorer on your computer.
+Navigate to the FSCI directory and find the .html file you&rsquo;ve been knitting.
+Rename this file to <code>index.html</code>.  On GitHub, Click on Upload a file. Drag
+index.html  to the box and click the green button at the bottom.  Now go to
+settings on GitHub.  Scroll down to the GHPages section and click the dropbown
+to select masster.  Click Save.  If you now scroll down to the GHPages section
+you&rsquo;ll see a github.io url.  Copy this and go back to the code section of your
+GitHub Repository.  Click and add the url.  If you clikc this link you&rsquo;ll see
+your report!</p>
+
+<h3>Binder</h3>
+
+<p>We need to copy all files used by knitter into our GitHub repository.  Make a
+copy of your .Rmd file that doesn&rsquo;t include the ORCID section (The
+authentication is a pain).  Then we
+need to tell Binder that we want to run R and what our dependencies are.  In
+GitHub, create a <code>runtime.txt</code> file that contains: <code>r-2018-07-09</code>.  This
+chooses a version of R at the date indicated.  Next create a <code>install.R</code> file
+that contains:</p>
+
+<pre><code>install.packages(&quot;rmarkdown&quot;)
+install.packages(&quot;bitops&quot;)
+install.packages(&quot;caTools&quot;)
+install.packages(&quot;tidyverse&quot;)
+install.packages(&quot;DT&quot;)
+</code></pre>
+
+<p>Now edit the README file in Github and add:</p>
+
+<pre><code>https://mybinder.org/v2/gh/AuthorCarpentry/R-Binder/master?urlpath=rstudio
+</code></pre>
+
+<p>replacing <code>AuthorCarpentry</code> with your GitHub account name and <code>R-Binder</code> with
+your GitHub repository name.  Click the Binder button and your environment will
+load (it might take up to 20 mins the first time).</p>
+
+<h2>Wrapup</h2>
+
+<p>See conclusions on the <a href="https://hackmd.io/KkctTzEsQP236tLLwbUoEQ?both">HackMD document</a></p>
+
+</section>
+
+<footer>
+<span>&copy; Lesson Contributors</span>
+<span><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img
+alt="Creative Commons License" style="vertical-align: middle;"
+src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a></span>
+<span>This work is licensed under a <a rel="license"
+href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution
+4.0 International License</a></span>
+</footer>
+</body>
+</html>

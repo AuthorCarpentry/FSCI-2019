@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Author Carpentry</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<header>
+<a href="http://authorcarpentry.github.io"><img src="img/AClogo.jpg" alt="Author Carpentry logo"></a>
+</header>
+<nav>
+<ul>
+<li><a href=".">Lesson</a></li>
+<li><a href="01-getting-started.html">Day 1: Getting Started</a></li>
+<li><a href="02-markdown.html">Day 2: Intro to Markdown</a></li>
+<li><a href="03-modifying-appearance.html">Day 3: Document Appearance</a></li>
+<li><a href="04-dynamic.html">Day 4: Dynamic Documents</a></li>
+<li><a href="05-publishing.html">Day 5: Publishing</a></li>
+<li><a href="mailto:authorcarpentry@library.caltech.edu">Contact Us</a></li>
+</ul>
+
+</nav>
+
+<section>
+<h1>Dynamic Content in the Reproducible Report</h1>
+
+<p>3 hours</p>
+
+<hr />
+
+<p>In a reproducible report, elements in the Rmarkdown file affect not only how your documents look, but also how they render and behave when output to a final format. That is because the coded text and scripts within the Rmarkdown file are <strong>computationally actionable</strong>. A computer is operating on the document to combine and render its content, providing you more power than you would have working manually as a human author.</p>
+
+<p>In this lesson we&rsquo;ll add a set of dynamic features to the exercise file and knit it to evaluate the outputs in HTML and Word.</p>
+
+<h2>Learning Objectives</h2>
+
+<ul>
+<li>Integrate dynamic content from an R script so the output is continually updated</li>
+<li>Distinguish between dynamic elements that will (and won&rsquo;t) work in multiple output formats (HTML, Word)</li>
+<li>Add an HTML widget to allow user interaction in an output HTML document</li>
+<li>Parameterize a document to permit efficient and powerful customized HTML reports</li>
+<li>Demonstrate the power of integrating content from the Web into your reproducible report</li>
+</ul>
+
+<hr />
+
+<h2>Content generated from R scripts</h2>
+
+<p>Up to now, you have manually entered three dates referenced in this document. Let&rsquo;s replace them with dynamically generated dates that will auto-update by the computer!</p>
+
+<ol>
+<li>Open the file <code>insert_4a_dates.R</code><br /></li>
+<li>Copy the code into the 3 different sections of the exercise file, as directed in the comments included in<code>insert_4a_dates.R</code><br /></li>
+<li>Close the file <code>insert_4a_dates.R</code></li>
+</ol>
+
+<p>Another section of the exercise file that can be populated by the computer is the number of journals in the <em>DOAJ Seal</em> data set. Let&rsquo;s replace manually-composed text with computer code!</p>
+
+<ol>
+<li>Open the file <code>insert_4a_jnls.txt</code></li>
+<li>Copy the code into the <strong>Data being collected</strong> section of the exercise file, making it the first sentence.</li>
+<li>Close the file <code>insert_4a_jnls.txt</code></li>
+</ol>
+
+<p>Save the changes to the exercise file and knit to HTML and Word. Can you find the dynamically-generated inline text now? When was your document originally created and how many journals have the DOAJ Seal?</p>
+
+<h2>Auto-generate bibliography files</h2>
+
+<p>Have you wondered why the YAML in the exercise file contains two separate bibliography files (<code>oajournals.bib</code> and <code>packages.bib</code>)? Why not make one concatenated file?</p>
+
+<p>The reason for the two files is that some of the references cited in our reproducible report represent <code>R</code> packages used to generate the report. <code>R</code> packages are continually updated in the <a href="https://cran.r-project.org/">The Comprehensive R Archive Network, CRAN</a>. If we manually maintained the bibliography file we&rsquo;d be editing it continually to reflect the new version of any <code>R</code> package we use.</p>
+
+<p>Alternatively, we can use the <code>write_bib.R</code> function in <code>knitr</code> to dynamically generate a <code>packages.bib</code> file for all the R packages referenced in the report. This more powerful and efficient form of literate programming provides certainty that the references are always up-to-date!</p>
+
+<p>In this exercise, let&rsquo;s add the citation for the <code>DT</code> and the  <code>rorcid</code> packages that we&rsquo;ll be using later on in this lesson.</p>
+
+<ol>
+<li>Open <code>packages.bib</code> file to see that it currently does not include a citation for <code>DT</code> or <code>rorcid</code>. Close that file.</li>
+<li>Open the script file <code>write_bib.R</code> and on the third line &ndash; the one that starts with <code>write_bib(c(&quot;tidyverse&quot;...)</code> add <code>DT</code> and <code>rorcid</code>, each in quotes, to the list of packages you want references for.</li>
+<li>Save the changes to <code>write_bib.R</code></li>
+<li>Select all of the code in  <code>write_bib.R</code> with your mouse. Once it is all highlighted, press <code>command+enter</code> to execute the code. You can watch the code run in your console window.</li>
+<li>Open <code>packages.bib</code> file once again to see that it now includes a citation for the <code>DT</code> and <code>rorcid</code> packages we&rsquo;ll be using in a bit. Close that file and put a smiley sticky on your laptop to signify happiness.</li>
+</ol>
+
+<h2>Building in User Interaction (Part 1)</h2>
+
+<p>Rmarkdown offers multiple ways to add user interactivity into your reproducible report. Enhancing documents in this way allows readers of your report to interact with, inspect, and evaluate the data and code you&rsquo;ve published.</p>
+
+<p>Let&rsquo;s start by adding a <code>code folding</code> option in our HTML output. This small interactive feature allows readers to see or hide the code chunks embedded in your report.</p>
+
+<ol>
+<li>In the YAML header of the exercise file, add a new line below the <code>output:</code> and <code>html:</code> lines.</li>
+</ol>
+
+<p><code>code_folding: hide</code></p>
+
+<p>This line should be at the same indent as other html options such as <code>css</code>, <code>toc</code>, <code>number_sections</code>, etc.</p>
+
+<ol>
+<li>Save the changes to the exercise file and knit to HTML and Word.</li>
+</ol>
+
+<p>What difference do you see in how <code>code folding</code> renders in the HTML and Word outputs? You can ponder this question as you enjoy a morning break!</p>
+
+<hr />
+
+<h2>Building in User Interaction (Part 2)</h2>
+
+<p>The data underlying this report is a table showing <em>DOAJ Seal</em> journals as rows, and the characteristics of those data as the columns. Let&rsquo;s make all of that data fully accessible and reusable for the readers of this report.</p>
+
+<p>To accomplish this enhancement, we need to copy a code chunk that formats the underlying data set using the <code>Datatable (DT)</code> package. [@R-DT].  This package is one of the <a href="https://www.htmlwidgets.org/">HTML Widgets</a> that enable JavaScript libraries to create dynamic content in Rmarkdown documents. <code>DT</code> tables and other HTML Widgets are not covered in this course. However we can insert a pre-built data table in our reproducible report to illustrate the power of interactive features !</p>
+
+<ol>
+<li><p>Open the R script <code>insert_4b_DTtable.R</code> and copy all of the code with your mouse. Close the file.</p></li>
+
+<li><p>In the exercise file, scroll down to the Level One heading <strong>Annexes</strong> and paste in the code chunk. Save the change and knit the document to HTML to see the dynamic data table generated in your report.</p></li>
+
+<li><p>Now let&rsquo;s tidy up this section of the report by adding a heading above this data table and a link to the static version of the table (the static table is higher up in the exercise file).</p></li>
+</ol>
+
+<ul>
+<li><p>Open the file <code>insert_4b_table.txt</code> and copy the first line of text (marked with a Level 2 header). Keep this file open because we will return to it to copy the second paragraph of text shortly&hellip;</p></li>
+
+<li><p>In the exercise file, paste the copied text under the heading <strong>Annexes</strong> and above the data-table code chunk.</p></li>
+
+<li><p>Back in the file <code>insert_4b_table.txt</code>, copy the second paragraph of text starting with &ldquo;The complete data set&hellip;&rdquo;</p></li>
+
+<li><p>In the exercise file, scroll up to the section <strong>Existing Data Being Reused</strong> where the table <strong>A Table of the first 4 rows of the DOAJ Seal data</strong> is displayed. Immediately after the text sentence &ldquo;A sample of the <code>doaj_seal.csv</code> data set is shown below&rdquo;, paste in the copied text. You should now have the following paragraph located above the static table.</p></li>
+</ul>
+
+<blockquote>
+<p>A sample of the <code>doaj_seal.csv</code> data set is shown below.  The complete data set is available in searchable and  broweseable format as <a href="#annex-table">Annex 10.1</a> at the end of this document.</p>
+</blockquote>
+
+<ul>
+<li>Test the link to Annex 10.1 to be sure you can move between the static table and the dynamic one. Now you can build in links to different sections within an Rmarkdown document!</li>
+</ul>
+
+<h2>Adding Parameters to a Report</h2>
+
+<p>Another dynamic feature of Rmarkdown reports is the ability to add parameters that allow the report to be customized  before knitting. In the words of Yihui Xie, J. J. Allaire, Garrett Grolemund, writing in <em>R Markdown: The Definitive Guide</em>[1]</p>
+
+<blockquote>
+<p>One of the many benefits of working with R Markdown is that you can reproduce analysis at the click of a button. This makes it very easy to update any work and alter any input parameters within the report. Parameterized reports extend this one step further, and allow users to specify one or more parameters to customize the analysis. This is useful if you want to create a report template that can be reused across multiple similar scenarios. Examples may include:</p>
+
+<blockquote>
+<ul>
+<li>Showing results for a specific geographic location.</li>
+<li>Running a report that covers a specific time period.</li>
+<li>Running a single analysis multiple times for different assumptions.</li>
+</ul>
+</blockquote>
+</blockquote>
+
+<p>Let&rsquo;s parameterize our exercise file to demonstrate the power of this dynamic reporting feature!  We&rsquo;ll apply this feature to enable the author to select her/his Institution before knitting.  &lsquo;a parameter&rsquo;Institution&rsquo; appears six times in the exercise file.  We will need to add some new code to the YAML header as well as to several paragraphs where the Institution has been manually entered.</p>
+
+<ol>
+<li><p>Open the file <code>insert_4b_params.txt</code> and copy all of the code. Close the file.</p></li>
+
+<li><p>In the YAML header of the exercise file ( at the bottom, before the three ending dashes), paste in the copied code <code>r params$institution</code>. If you wish to change the names of any of the Institutions listed, feel free to do so. Just make sure there are at least four Institutions included in the list. Save the changes.</p></li>
+
+<li><p>In the the body text of the exercise file, find five occurrences of an Institution name. To find the occurrences in the main body of the text, use the &lsquo;Find&rsquo; option under RStudio&rsquo;s Edit menu. Replace each occurrence of an Institution name with the code <code>r params$institution</code>.  When you <code>knit with parameters</code>, the inline R code will automatically write in the name of your selected Institution.</p></li>
+
+<li><p>Knit to HTML and find six occurrences of your auto-populated Institution name.</p></li>
+</ol>
+
+<h2>Autopopulate your Biosketch from your ORCID profile on the web</h2>
+
+<p>This final dynamic feature demonstrates the power of keeping your updated professional information in your ORCID profile, and copying information from it as you need it in your reproducible report.</p>
+
+<p>To make this feature work its magic, we need to get an authentication token from ORCID in order to read your bio from your ORCID profile.  This is a multi-step process, allowing RStudio and R to communicate with the ORCID system. Let&rsquo;s proceed step by step.</p>
+
+<ol>
+<li><p>In the exercise file, navigate to the section <strong>Principal Investigator&rsquo;s Biosketch</strong>.  Open the file <code>insert_4b_orcid.R</code>. Copy the first code chunk from this file and paste into your exercise file under the Level 2 header <strong>Principal Investigators Biosketch</strong>.</p></li>
+
+<li><p>In this new code chunk in your exercise file, click the green arrow to the upper right corner to run the code. This will open up a web browser to the ORCID web site, where you&rsquo;ll log in to your account as usual.</p></li>
+</ol>
+
+<p>In your RStudio Environment window, you will see a variable called <code>token</code> added. This is the authorization code issued by ORCID that allows R and RStudio to read information from your ORCID account.</p>
+
+<ol>
+<li><p>In the R console type <code>token</code>.  This prints to the console the token value you saw added to your Environment. We&rsquo;ll be copying and pasting that token string into a new file in Step 5 below.</p></li>
+
+<li><p>This step creates an .R environment file in your computer&rsquo;s home directory where you will store the ORCID <code>token</code>. By doing so, the authorization is able to be reactivated every time your RStudio session communicates with ORCID to refresh or add data from your profile.</p></li>
+</ol>
+
+<p>Return to the file <code>insert_4b_orcid.R</code>. Now copy and paste the second code chunk into the console (NOT into your exercise file!):</p>
+
+<ol>
+<li>A new text file now opens in Rstudio.  In this file type:</li>
+</ol>
+
+<pre><code>ORCID_TOKEN=&quot;1c7...&quot;
+</code></pre>
+
+<p>where <code>1c7...</code> is replaced by the token that we printed to the R console earlier.  You will need to copy everything after <code>BEARER</code> that was just printed to the console. Paste it in after the <code>=</code> sign.</p>
+
+<ol>
+<li>Save this file, which will be read every time you use R.<br /></li>
+</ol>
+
+<p>FYI, this <code>.Renevironment file</code> will show up in your computer&rsquo;s home directory which is outside of your RStudio project directory. The exact &ldquo;where&rdquo; depends on your computer&rsquo;s operating system and configuration.</p>
+
+<ol>
+<li>In the exercise file, update the text under the <strong>Project PI&rsquo;s Biosketch</strong>, we need to make a couple of updates</li>
+</ol>
+
+<p>a. Add the following text under the header to give attribution to the <code>rorcid</code> package.</p>
+
+<p><code>_This is auto-populated from your ORCID profile using the @R-rorcid</code>rorcid<code>package._</code></p>
+
+<p>b. Insert code to place the ORCID bio into the PI Biosketch section. Below
+the code chunk, add <code>\</code>r bio` `</p>
+
+<ol>
+<li><p>Save the changes, knit to HTML, and you&rsquo;ll see the biography from your ORCID file now appear in the reproducible report.</p></li>
+
+<li><p>To test that the biosketch will be auto-updated in your  report when your ORCID bio is updated, go to your ORCID account and make a change to your biography. You might add a new accomplishment to the top of the bio, such as <em>Master of Reproducible Reporting</em> or <em>Bends RMarkdown to Her/His Will</em>.</p></li>
+</ol>
+
+<p>When you knit the document to HTML, the <strong>Principal Investigators Biosketch</strong> auto-updates!</p>
+
+<ol>
+<li>Back in your ORCID profile, don&rsquo;t forget to remove the latest change to your bio, if appropriate.</li>
+</ol>
+
+<hr />
+
+<h2>[1] Xie et al was published online in July 2018 at <a href="https://bookdown.org/yihui/rmarkdown/">https://bookdown.org/yihui/rmarkdown/</a></h2>
+
+<p>Previous: <a href="00-getting-started.html">Getting Started with Markdown</a> Next: <a href="05-publishing.html">Publishing</a></p>
+
+</section>
+
+<footer>
+<span>&copy; Lesson Contributors</span>
+<span><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img
+alt="Creative Commons License" style="vertical-align: middle;"
+src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a></span>
+<span>This work is licensed under a <a rel="license"
+href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution
+4.0 International License</a></span>
+</footer>
+</body>
+</html>
