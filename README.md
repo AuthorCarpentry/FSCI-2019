@@ -1,7 +1,7 @@
-Author Carpentry at FSCI 2018: Reproducible Research Reporting and Dynamic Documents with Open Authoring Tools: Toward the Paper of the Future
+Author Carpentry at FSCI 2019: Reproducible Research Reporting and Dynamic Documents with Open Authoring Tools: Toward the Paper of the Future
 =======
 
-*Instructors: Gail Clement, Tom Morrell*
+*Instructors: Tom Morrell, Donna Wrublewski*
 
 **Lesson status: In Development**
 
