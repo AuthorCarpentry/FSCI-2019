@@ -21,13 +21,13 @@
 
 ----------------------------------------------------
 
-## Anatomy of an RMarkdown Reproducible Report
+## Anatomy of an Rmarkdown Reproducible Report
 
 It's time to start building your own Reproducible Report! The course instructors have prepared all the content as text and script files, so you can focus on learning Rmarkdown. Let's go step by step:
 
 #### Step 1.
 
-In RStudio, navigate through the `Files` pane to the `FSCI-2018-files` subfolder and open the exercise file `Base_2013_day2_in.Rmd`. Immediately save it as `Base_2013_day2_out.Rmd` and close the 'in' file. We will  continue to work on the 'out' file during this lesson.  By the end of the course, that 'out' file will be ready to publish online, showcasing your open authoring skills!
+In RStudio, navigate through the `Files` pane to the `FSCI-2019-files` subfolder and open the exercise file `Base_2013_day2_in.Rmd`. Immediately save it as `Base_2013_day2_out.Rmd` and close the 'in' file. We will  continue to work on the 'out' file during this lesson.  By the end of the course, that 'out' file will be ready to publish online, showcasing your open authoring skills!
 
 #### Step 2. Note that the `.Rmd` exercise file has three main components:
 
@@ -46,7 +46,6 @@ In the `date` field, enter today's date
 
 
 **Text Document**
-
 
 Scholarly publishing requires us to format our text documents to clarify
 meaning. For example,
@@ -101,7 +100,6 @@ address in round parentheses \(\).  (TIP: Make sure there is no space between th
 
 10. Pandoc supports crude tables created with the pipe \| and \- symbols to designate cell borders, and the \+ symbol to control text alignment in a cell. The exercise file provides the makings of a pipe table in the 'Expected Outputs' section. The final row of data needs formatting -- insert | symbols six times. Also remove the instructions above that line so the table will knit clean.
 
-
 11. You did alot of work! Save the file and knit it to both HTML and Word. Compare the results to see if anything changes based on output file format.
 
 
@@ -112,7 +110,8 @@ address in round parentheses \(\).  (TIP: Make sure there is no space between th
 We have lots of sections in our document; it would be nice if these were
 listed in a table of contents and numbered so we could easily refer to a
 specific section.  We don't want to have to manually update the table of
-contents or renumber everything when we move sections around; we want `knitr` to do as much as possible automagically.
+contents or renumber everything when we move sections around; we want `knitr` 
+to do as much as possible automagically.
 
 In order to customize the appearance of our document, we need to pass
 information to `knitr` about what we want.  We use the YAML header, where we
@@ -176,16 +175,17 @@ document by adding the option `css: custom.css` to your YAML header.
 ### Word
 
 You can customize Word document styling, such as fonts, sizing, and section
-numbering, within the  Word program.  You can then provide `knitr` with the stylized Word document to use as a style sheet of sorts .  Because editing word document styling
-is a pain, we've created a Word document with section numbering that you can use.
-You just need to add `reference_docx: "Base_2013_day3_style.docx"` to the YAML
-header for the `word_document` type and knit to see the result.
+numbering, within the  Word program. You can then provide `knitr` with the 
+stylized Word document to use as a style sheet of sorts. Because editing Word 
+document styling is a pain, we've created a Word document with section numbering 
+that you can use. You just need to add `reference_docx: "Base_2013_day3_style.docx"` 
+to the YAML header for the `word_document` type and knit to see the result.
 
 ## Integrated Code
 
-The benefit of using Rstudio to author reports is that you have the
-ability to perform computation, live within the document.  First, let's load some
-data into our exercise file.  Look at the top of the file where the DOAJ data is
+The benefit of using RStudio to author reports is that you have the
+ability to perform computation, live within the document. First, let's load some
+data into our exercise file. Look at the top of the file where the DOAJ data is
 imported in a code chunk.  Code chunks are demarcated by three tics \`\`\`.  The first group
 of tics is followed by a label that indicates the type of code and a
 description.  So, the label in this example is `{r add_dataset}`.  You'll see
