@@ -23,16 +23,16 @@ In this lesson we'll add a set of dynamic features to the exercise file and knit
 
 Up to now, you have manually entered three dates referenced in this document. Let's replace them with dynamically generated dates that will auto-update by the computer!
 
-1. Open the file `insert_4a_dates.R`  
-2. Copy the code into the 3 different sections of the exercise file, as directed in the comments included in`insert_4a_dates.R`  
-3. Close the file `insert_4a_dates.R`
+1. Open the file `insert_dates.R`  
+2. Copy the code into the 3 different sections of the exercise file, as directed in the comments included in `insert_dates.R`  
+3. Close the file `insert_dates.R`
 
 
 Another section of the exercise file that can be populated by the computer is the number of journals in the *DOAJ Seal* data set. Let's replace manually-composed text with computer code!
 
-1. Open the file `insert_4a_jnls.txt`
+1. Open the file `insert_jnls.txt`
 2. Copy the code into the **Data being collected** section of the exercise file, making it the first sentence. 
-3. Close the file `insert_4a_jnls.txt`
+3. Close the file `insert_jnls.txt`
 
 Save the changes to the exercise file and knit to HTML and Word. Can you find the dynamically-generated inline text now? When was your document originally created and how many journals have the DOAJ Seal?
 
@@ -77,17 +77,17 @@ The data underlying this report is a table showing _DOAJ Seal_ journals as rows,
 
 To accomplish this enhancement, we need to copy a code chunk that formats the underlying data set using the `Datatable (DT)` package. [@R-DT].  This package is one of the [HTML Widgets](https://www.htmlwidgets.org/) that enable JavaScript libraries to create dynamic content in Rmarkdown documents. `DT` tables and other HTML Widgets are not covered in this course. However we can insert a pre-built data table in our reproducible report to illustrate the power of interactive features !
 
-1. Open the R script `insert_4b_DTtable.R` and copy all of the code with your mouse. Close the file.
+1. Open the R script `insert_DTtable.R` and copy all of the code with your mouse. Close the file.
 
 2. In the exercise file, scroll down to the Level One heading **Annexes** and paste in the code chunk. Save the change and knit the document to HTML to see the dynamic data table generated in your report. 
 
 3. Now let's tidy up this section of the report by adding a heading above this data table and a link to the static version of the table (the static table is higher up in the exercise file).
 
-* Open the file `insert_4b_table.txt` and copy the first line of text (marked with a Level 2 header). Keep this file open because we will return to it to copy the second paragraph of text shortly...
+* Open the file `insert_table.txt` and copy the first line of text (marked with a Level 2 header). Keep this file open because we will return to it to copy the second paragraph of text shortly...
 
 * In the exercise file, paste the copied text under the heading **Annexes** and above the data-table code chunk.
 
-* Back in the file `insert_4b_table.txt`, copy the second paragraph of text starting with "The complete data set..."
+* Back in the file `insert_table.txt`, copy the second paragraph of text starting with "The complete data set..."
 
 * In the exercise file, scroll up to the section **Existing Data Being Reused** where the table **A Table of the first 4 rows of the DOAJ Seal data** is displayed. Immediately after the text sentence "A sample of the `doaj_seal.csv` data set is shown below", paste in the copied text. You should now have the following paragraph located above the static table.
 
@@ -108,7 +108,7 @@ Another dynamic feature of Rmarkdown reports is the ability to add parameters th
 
 Let's parameterize our exercise file to demonstrate the power of this dynamic reporting feature!  We'll apply this feature to enable the author to select her/his Institution before knitting.  'a parameter'Institution' appears six times in the exercise file.  We will need to add some new code to the YAML header as well as to several paragraphs where the Institution has been manually entered.
 
-1. Open the file `insert_4b_params.txt` and copy all of the code. Close the file.
+1. Open the file `insert_params.txt` and copy all of the code. Close the file.
 
 2. In the YAML header of the exercise file ( at the bottom, before the three ending dashes), paste in the copied code `r params$institution`. If you wish to change the names of any of the Institutions listed, feel free to do so. Just make sure there are at least four Institutions included in the list. Save the changes.
 
@@ -132,8 +132,7 @@ In your RStudio Environment window, you will see a variable called `token` added
 
 4. This step creates an .R environment file in your computer's home directory where you will store the ORCID `token`. By doing so, the authorization is able to be reactivated every time your RStudio session communicates with ORCID to refresh or add data from your profile.   
 
-Return to the file `insert_4b_orcid.R`. Now copy and paste the second code chunk into the console (NOT into your exercise file!):
-
+Return to the file `insert_orcid.R`. Now copy and paste the second code chunk into the console (NOT into your exercise file!):
 
 5. A new text file now opens in Rstudio.  In this file type:
 
