@@ -1,3 +1,0 @@
-- Principal Investigator - Your Name, `r params$institution`
-- Co-Investigator - Thomas Morell, Caltech
-- Key Personnel - Donna Wrublewski and Robert Doiel, Caltech
