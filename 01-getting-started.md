@@ -47,7 +47,6 @@ Source: Rallison, S.P., 'What are Journals For?', _Ann R Coll Surg Engl._ 2015 M
 ## How can authors fulfill these requirements while making their research reports more Findable, Accessible, Interoperable, and Re-Useable/Reproducible?
 
 
-
 Now we'll show you the final result (on our machine).  
 
 The first step in getting this dynmaic document is installing some software!
@@ -93,7 +92,7 @@ with a new folder called `FSCI-2018-files`.
 
 ## Intro to RStudio and knitting documents
 
-Now open Rstudio (Applications/Rstudio).  Rstudio is the development
+Now open RStudio (Applications/Rstudio).  RStudio is the development
 environment where we'll be working on our document.  The main panel you'll see
 on the left is the Console, where you can run R code.  On the right is two
 panels - the upper contains your environment (what R can access), and the lower
@@ -112,8 +111,8 @@ we'll need the following packages:
 
 Now let's actually work with a document.  Click in the Files tab in the lower
 right panel.  The file view in RStudio is just like
-navigating in finder or windows explorer.  Let's find the `FSCI-2018-files`
-folder we downloaded above.  Go to Desktop and `FSCI-2018-files`.  You'll see
+navigating in finder or windows explorer.  Let's find the `FSCI-2019-files`
+folder we downloaded above.  Go to Desktop and `FSCI-2019-files`. You'll see
 lots of files we'll use during the workshop.  Double click on
 `Base_2013_day1_in.Rmd`.  
 
@@ -123,21 +122,21 @@ here.  For now, just change the name in the document to your name.
 
 Knitting is a process in Rstudio that takes a text document and turns it into
 an output (like html, docx, or html slides).  Now click the knit button in the upper
-left hand corner of the editor.    The first
-time you do this you'll get a message that you need to install some packages.
-You'll want to click Yes and wait for the packages to install.  Once the
-installation you'll see an interactive demonstration document!
+left hand corner of the editor. The first time you do this you'll get a message 
+that you need to install some packages. Click Yes and wait for the packages to 
+install. Once the installation finishes, you will see an interactive demonstration 
+document!
 
-You can output this single file in multiple formats.  By default we've been
-generating .html files, but we can also output to a word document.  If you
+You can output this single file in multiple formats. By default we've been
+generating .html files, but we can also output to a Word document. If you
 click on the downward arrow next to the knit button we see some default
-formats.  Click on Word, and a word document will appear.  
+formats. Click on Word, and a word document will appear.  
 
 While pdf is an option, this requires a TeX distribution which is complex to
 install and beyond the scope of  this course.
 
 You can also select other output forms that aren't listed in the `knitr`
-dropdown.  Take a look at the document.  You'll see in the top a section called
+dropdown. Take a look at the document. You'll see in the top a section called
 `output` with sections under it like `html_document`.  If we change the top
 output knit will produce a different result.  Try replacing `word_document`
 with `slidy_presentation`.  This is a html presentation that you can use in 
