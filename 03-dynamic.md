@@ -170,4 +170,4 @@ When you knit the document to HTML, the **Principal Investigators Biosketch** au
 [1] Xie et al was published online in July 2018 at https://bookdown.org/yihui/rmarkdown/
 -----
 
-Previous: [Getting Started with Markdown](00-getting-started.html) Next: [Publishing](05-publishing.html)
+Previous: [Getting Started with Markdown](02-markdown.html) Next: [Publishing](04-publishing.html)
