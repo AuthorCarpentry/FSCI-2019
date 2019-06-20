@@ -44,13 +44,13 @@
 
 <hr />
 
-<h2>Anatomy of an RMarkdown Reproducible Report</h2>
+<h2>Anatomy of an Rmarkdown Reproducible Report</h2>
 
 <p>It&rsquo;s time to start building your own Reproducible Report! The course instructors have prepared all the content as text and script files, so you can focus on learning Rmarkdown. Let&rsquo;s go step by step:</p>
 
 <h4>Step 1.</h4>
 
-<p>In RStudio, navigate through the <code>Files</code> pane to the <code>FSCI-2018-files</code> subfolder and open the exercise file <code>Base_2013_day2_in.Rmd</code>. Immediately save it as <code>Base_2013_day2_out.Rmd</code> and close the &lsquo;in&rsquo; file. We will  continue to work on the &lsquo;out&rsquo; file during this lesson.  By the end of the course, that &lsquo;out&rsquo; file will be ready to publish online, showcasing your open authoring skills!</p>
+<p>In RStudio, navigate through the <code>Files</code> pane to the <code>FSCI-2019-files</code> subfolder and open the exercise file <code>Base_2013_day2_in.Rmd</code>. Immediately save it as <code>Base_2013_day2_out.Rmd</code> and close the &lsquo;in&rsquo; file. We will  continue to work on the &lsquo;out&rsquo; file during this lesson.  By the end of the course, that &lsquo;out&rsquo; file will be ready to publish online, showcasing your open authoring skills!</p>
 
 <h4>Step 2. Note that the <code>.Rmd</code> exercise file has three main components:</h4>
 
@@ -133,7 +133,8 @@ address in round parentheses ().  (TIP: Make sure there is no space between the 
 <p>We have lots of sections in our document; it would be nice if these were
 listed in a table of contents and numbered so we could easily refer to a
 specific section.  We don&rsquo;t want to have to manually update the table of
-contents or renumber everything when we move sections around; we want <code>knitr</code> to do as much as possible automagically.</p>
+contents or renumber everything when we move sections around; we want <code>knitr</code>
+to do as much as possible automagically.</p>
 
 <p>In order to customize the appearance of our document, we need to pass
 information to <code>knitr</code> about what we want.  We use the YAML header, where we
@@ -197,16 +198,17 @@ document by adding the option <code>css: custom.css</code> to your YAML header.<
 <h3>Word</h3>
 
 <p>You can customize Word document styling, such as fonts, sizing, and section
-numbering, within the  Word program.  You can then provide <code>knitr</code> with the stylized Word document to use as a style sheet of sorts .  Because editing word document styling
-is a pain, we&rsquo;ve created a Word document with section numbering that you can use.
-You just need to add <code>reference_docx: &quot;Base_2013_day3_style.docx&quot;</code> to the YAML
-header for the <code>word_document</code> type and knit to see the result.</p>
+numbering, within the  Word program. You can then provide <code>knitr</code> with the
+stylized Word document to use as a style sheet of sorts. Because editing Word
+document styling is a pain, we&rsquo;ve created a Word document with section numbering
+that you can use. You just need to add <code>reference_docx: &quot;Base_2013_day3_style.docx&quot;</code>
+to the YAML header for the <code>word_document</code> type and knit to see the result.</p>
 
 <h2>Integrated Code</h2>
 
-<p>The benefit of using Rstudio to author reports is that you have the
-ability to perform computation, live within the document.  First, let&rsquo;s load some
-data into our exercise file.  Look at the top of the file where the DOAJ data is
+<p>The benefit of using RStudio to author reports is that you have the
+ability to perform computation, live within the document. First, let&rsquo;s load some
+data into our exercise file. Look at the top of the file where the DOAJ data is
 imported in a code chunk.  Code chunks are demarcated by three tics ```.  The first group
 of tics is followed by a label that indicates the type of code and a
 description.  So, the label in this example is <code>{r add_dataset}</code>.  You&rsquo;ll see

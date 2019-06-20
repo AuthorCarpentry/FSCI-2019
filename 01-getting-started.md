@@ -44,8 +44,19 @@ Photograph: Royal Society's collections
 
 Source: Rallison, S.P., 'What are Journals For?', _Ann R Coll Surg Engl._ 2015 Mar; 97(2): 89-91. DOI: 10.1308/003588414X14055925061397
 
-## How can authors fulfill these requirements while making their research reports more Findable, Accessible, Interoperable, and Re-Useable/Reproducible?
+## What are some examples of reproducible reports
 
+1. Hu, Y. et. al. Late Middle Pleistocene Levallois stone-tool technology in
+southwest China _Nature_ 565, 82-85 (2019) DOI
+[10.1038/s41586-018-0710-1](https://doi.org/10.1038/s41586-018-0710-1) 
+2. Boettiger, C. From noise to knowledge: how randomness generates novel
+phenomena and reveals information _Ecology Letters_ 21, 1255-1267 (2018) DOI
+[10.111/ele.13085](https://doi.org/10.1111/ele.13085)
+3. Lewis, L. M. et. al. Replication Study: Transcriptional amplification in tumor cells with
+elevated c-Myc _eLife_ 2018; 7:e30274 DOI
+[10.7554/eLife.30274](https://doi.org/10.7554/eLife.30274)
+
+## How can authors fulfill these requirements while making their research reports more Findable, Accessible, Interoperable, and Re-Useable/Reproducible?
 
 Now we'll show you the final result (on our machine).  
 
@@ -85,10 +96,10 @@ IDE](https://www.rstudio.com/products/rstudio/download/#download).
 
 You also need to download some files for this workshop:
 
-1. Download [this zip file](/FSCI-2018/data/FSCI-2018-files.zip) and move
+1. Download [this zip file](/FSCI-2019/data/FSCI-2019-files.zip) and move
 the file to your desktop.
 2. If it's not unzipped yet, double-click on it to unzip it. You should end up
-with a new folder called `FSCI-2018-files`.
+with a new folder called `FSCI-2019-files`.
 
 ## Intro to RStudio and knitting documents
 
@@ -133,7 +144,7 @@ click on the downward arrow next to the knit button we see some default
 formats. Click on Word, and a word document will appear.  
 
 While pdf is an option, this requires a TeX distribution which is complex to
-install and beyond the scope of  this course.
+install and beyond the scope of this course.
 
 You can also select other output forms that aren't listed in the `knitr`
 dropdown. Take a look at the document. You'll see in the top a section called
@@ -142,6 +153,6 @@ output knit will produce a different result.  Try replacing `word_document`
 with `slidy_presentation`.  This is a html presentation that you can use in 
 any web browser.
 
-Tomorrow we'll start working with an actual research report !
+Tomorrow we'll start working with an actual research report!
 
 Next: [Basic Markdown](02-markdown.html)
