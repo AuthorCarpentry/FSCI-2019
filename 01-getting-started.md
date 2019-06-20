@@ -44,7 +44,7 @@ Photograph: Royal Society's collections
 
 Source: Rallison, S.P., 'What are Journals For?', _Ann R Coll Surg Engl._ 2015 Mar; 97(2): 89-91. DOI: 10.1308/003588414X14055925061397
 
-## What are some examples of reproducible reports
+## What are some examples of reproducible reports?
 
 1. Hu, Y. et. al. Late Middle Pleistocene Levallois stone-tool technology in
 southwest China _Nature_ 565, 82-85 (2019) DOI
