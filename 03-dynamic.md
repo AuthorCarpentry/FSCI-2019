@@ -84,15 +84,10 @@ To accomplish this enhancement, we need to copy a code chunk that formats the un
 3. Now let's tidy up this section of the report by adding a heading above this data table and a link to the static version of the table (the static table is higher up in the exercise file).
 
 * Open the file `insert_table.txt` and copy the first line of text (marked with a Level 2 header). Keep this file open because we will return to it to copy the second paragraph of text shortly...
-
 * In the exercise file, paste the copied text under the heading **Annexes** and above the data-table code chunk.
-
 * Back in the file `insert_table.txt`, copy the second paragraph of text starting with "The complete data set..."
-
 * In the exercise file, scroll up to the section **Existing Data Being Reused** where the table **A Table of the first 4 rows of the DOAJ Seal data** is displayed. Immediately after the text sentence "A sample of the `doaj_seal.csv` data set is shown below", paste in the copied text. You should now have the following paragraph located above the static table.
-
 > A sample of the `doaj_seal.csv` data set is shown below.  The complete data set is available in searchable and  broweseable format as [Annex 10.1](#annex-table) at the end of this document.
-
 * Test the link to Annex 10.1 to be sure you can move between the static table and the dynamic one. Now you can build in links to different sections within an Rmarkdown document!
 
 
@@ -122,7 +117,7 @@ This final dynamic feature demonstrates the power of keeping your updated profes
 
 To make this feature work its magic, we need to get an authentication token from ORCID in order to read your bio from your ORCID profile.  This is a multi-step process, allowing RStudio and R to communicate with the ORCID system. Let's proceed step by step.
 
-1. In the exercise file, navigate to the section **Principal Investigator's Biosketch**.  Open the file `insert_4b_orcid.R`. Copy the first code chunk from this file and paste into your exercise file under the Level 2 header **Principal Investigators Biosketch**.
+1. In the exercise file, navigate to the section **Principal Investigator's Biosketch**.  Open the file `insert_orcid.R`. Copy the first code chunk from this file and paste into your exercise file under the Level 2 header **Principal Investigators Biosketch**.
 
 2. In this new code chunk in your exercise file, click the green arrow to the upper right corner to run the code. This will open up a web browser to the ORCID web site, where you'll log in to your account as usual.  
 

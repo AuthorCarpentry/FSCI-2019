@@ -125,7 +125,7 @@ right panel.  The file view in RStudio is just like
 navigating in finder or windows explorer.  Let's find the `FSCI-2019-files`
 folder we downloaded above.  Go to Desktop and `FSCI-2019-files`. You'll see
 lots of files we'll use during the workshop.  Double click on
-`Base_2013_day1_in.Rmd`.  
+`Base_2013_1.Rmd`.  
 
 You'll see the document open in a new panel on the left hand side of the
 screen.  This is an editor window, and you can change things in the document

@@ -25,7 +25,7 @@
 
 <p>3 hours</p>
 
-<hr />
+<hr>
 
 <p>In a reproducible report, elements in the Rmarkdown file affect not only how your documents look, but also how they render and behave when output to a final format. That is because the coded text and scripts within the Rmarkdown file are <strong>computationally actionable</strong>. A computer is operating on the document to combine and render its content, providing you more power than you would have working manually as a human author.</p>
 
@@ -41,15 +41,17 @@
 <li>Demonstrate the power of integrating content from the Web into your reproducible report</li>
 </ul>
 
-<hr />
+<hr>
 
 <h2>Content generated from R scripts</h2>
 
 <p>Up to now, you have manually entered three dates referenced in this document. Let&rsquo;s replace them with dynamically generated dates that will auto-update by the computer!</p>
 
 <ol>
-<li>Open the file <code>insert_dates.R</code><br /></li>
-<li>Copy the code into the 3 different sections of the exercise file, as directed in the comments included in <code>insert_dates.R</code><br /></li>
+<li>Open the file <code>insert_dates.R</code><br>
+</li>
+<li>Copy the code into the 3 different sections of the exercise file, as directed in the comments included in <code>insert_dates.R</code><br>
+</li>
 <li>Close the file <code>insert_dates.R</code></li>
 </ol>
 
@@ -101,7 +103,7 @@
 
 <p>What difference do you see in how <code>code folding</code> renders in the HTML and Word outputs? You can ponder this question as you enjoy a morning break!</p>
 
-<hr />
+<hr>
 
 <h2>Building in User Interaction (Part 2)</h2>
 
@@ -118,20 +120,11 @@
 </ol>
 
 <ul>
-<li><p>Open the file <code>insert_table.txt</code> and copy the first line of text (marked with a Level 2 header). Keep this file open because we will return to it to copy the second paragraph of text shortly&hellip;</p></li>
-
-<li><p>In the exercise file, paste the copied text under the heading <strong>Annexes</strong> and above the data-table code chunk.</p></li>
-
-<li><p>Back in the file <code>insert_table.txt</code>, copy the second paragraph of text starting with &ldquo;The complete data set&hellip;&rdquo;</p></li>
-
-<li><p>In the exercise file, scroll up to the section <strong>Existing Data Being Reused</strong> where the table <strong>A Table of the first 4 rows of the DOAJ Seal data</strong> is displayed. Immediately after the text sentence &ldquo;A sample of the <code>doaj_seal.csv</code> data set is shown below&rdquo;, paste in the copied text. You should now have the following paragraph located above the static table.</p></li>
-</ul>
-
-<blockquote>
-<p>A sample of the <code>doaj_seal.csv</code> data set is shown below.  The complete data set is available in searchable and  broweseable format as <a href="#annex-table">Annex 10.1</a> at the end of this document.</p>
-</blockquote>
-
-<ul>
+<li>Open the file <code>insert_table.txt</code> and copy the first line of text (marked with a Level 2 header). Keep this file open because we will return to it to copy the second paragraph of text shortly&hellip;</li>
+<li>In the exercise file, paste the copied text under the heading <strong>Annexes</strong> and above the data-table code chunk.</li>
+<li>Back in the file <code>insert_table.txt</code>, copy the second paragraph of text starting with &ldquo;The complete data set&hellip;&rdquo;</li>
+<li>In the exercise file, scroll up to the section <strong>Existing Data Being Reused</strong> where the table <strong>A Table of the first 4 rows of the DOAJ Seal data</strong> is displayed. Immediately after the text sentence &ldquo;A sample of the <code>doaj_seal.csv</code> data set is shown below&rdquo;, paste in the copied text. You should now have the following paragraph located above the static table.
+&gt; A sample of the <code>doaj_seal.csv</code> data set is shown below.  The complete data set is available in searchable and  broweseable format as <a href="#annex-table">Annex 10.1</a> at the end of this document.</li>
 <li>Test the link to Annex 10.1 to be sure you can move between the static table and the dynamic one. Now you can build in links to different sections within an Rmarkdown document!</li>
 </ul>
 
@@ -170,7 +163,7 @@
 <p>To make this feature work its magic, we need to get an authentication token from ORCID in order to read your bio from your ORCID profile.  This is a multi-step process, allowing RStudio and R to communicate with the ORCID system. Let&rsquo;s proceed step by step.</p>
 
 <ol>
-<li><p>In the exercise file, navigate to the section <strong>Principal Investigator&rsquo;s Biosketch</strong>.  Open the file <code>insert_4b_orcid.R</code>. Copy the first code chunk from this file and paste into your exercise file under the Level 2 header <strong>Principal Investigators Biosketch</strong>.</p></li>
+<li><p>In the exercise file, navigate to the section <strong>Principal Investigator&rsquo;s Biosketch</strong>.  Open the file <code>insert_orcid.R</code>. Copy the first code chunk from this file and paste into your exercise file under the Level 2 header <strong>Principal Investigators Biosketch</strong>.</p></li>
 
 <li><p>In this new code chunk in your exercise file, click the green arrow to the upper right corner to run the code. This will open up a web browser to the ORCID web site, where you&rsquo;ll log in to your account as usual.</p></li>
 </ol>
@@ -195,7 +188,8 @@
 <p>where <code>1c7...</code> is replaced by the token that we printed to the R console earlier.  You will need to copy everything after <code>BEARER</code> that was just printed to the console. Paste it in after the <code>=</code> sign.</p>
 
 <ol>
-<li>Save this file, which will be read every time you use R.<br /></li>
+<li>Save this file, which will be read every time you use R.<br>
+</li>
 </ol>
 
 <p>FYI, this <code>.Renevironment file</code> will show up in your computer&rsquo;s home directory which is outside of your RStudio project directory. The exact &ldquo;where&rdquo; depends on your computer&rsquo;s operating system and configuration.</p>
@@ -223,7 +217,7 @@ the code chunk, add <code>\</code>r bio` `</p>
 <li>Back in your ORCID profile, don&rsquo;t forget to remove the latest change to your bio, if appropriate.</li>
 </ol>
 
-<hr />
+<hr>
 
 <h2>[1] Xie et al was published online in July 2018 at <a href="https://bookdown.org/yihui/rmarkdown/">https://bookdown.org/yihui/rmarkdown/</a></h2>
 
