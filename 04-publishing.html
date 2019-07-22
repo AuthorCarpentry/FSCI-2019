@@ -82,9 +82,67 @@ install.packages(&quot;DT&quot;)
 your GitHub repository name.  Click the Binder button and your environment will
 load (it might take up to 20 mins the first time).</p>
 
-<h2>Wrapup</h2>
+<h2>Autopopulate your Biosketch from your ORCID profile on the web</h2>
 
-<p>See conclusions on the <a href="https://hackmd.io/KkctTzEsQP236tLLwbUoEQ?both">HackMD document</a></p>
+<p>This final dynamic feature demonstrates the power of keeping your updated professional information in your ORCID profile, and copying information from it as you need it in your reproducible report.</p>
+
+<p>To make this feature work its magic, we need to get an authentication token from ORCID in order to read your bio from your ORCID profile.  This is a multi-step process, allowing RStudio and R to communicate with the ORCID system. Let&rsquo;s proceed step by step.</p>
+
+<ol>
+<li><p>In the exercise file, navigate to the section <strong>Principal Investigator&rsquo;s Biosketch</strong>.  Open the file <code>insert_orcid.R</code>. Copy the first code chunk from this file and paste into your exercise file under the Level 2 header <strong>Principal Investigators Biosketch</strong>.</p></li>
+
+<li><p>In this new code chunk in your exercise file, click the green arrow to the upper right corner to run the code. This will open up a web browser to the ORCID web site, where you&rsquo;ll log in to your account as usual.</p></li>
+</ol>
+
+<p>In your RStudio Environment window, you will see a variable called <code>token</code> added. This is the authorization code issued by ORCID that allows R and RStudio to read information from your ORCID account.</p>
+
+<ol>
+<li><p>In the R console type <code>token</code>.  This prints to the console the token value you saw added to your Environment. We&rsquo;ll be copying and pasting that token string into a new file in Step 5 below.</p></li>
+
+<li><p>This step creates an .R environment file in your computer&rsquo;s home directory where you will store the ORCID <code>token</code>. By doing so, the authorization is able to be reactivated every time your RStudio session communicates with ORCID to refresh or add data from your profile.</p></li>
+</ol>
+
+<p>Return to the file <code>insert_orcid.R</code>. Now copy and paste the second code chunk into the console (NOT into your exercise file!):</p>
+
+<ol>
+<li>A new text file now opens in Rstudio.  In this file type:</li>
+</ol>
+
+<pre><code>ORCID_TOKEN=&quot;1c7...&quot;
+</code></pre>
+
+<p>where <code>1c7...</code> is replaced by the token that we printed to the R console earlier.  You will need to copy everything after <code>BEARER</code> that was just printed to the console. Paste it in after the <code>=</code> sign.</p>
+
+<ol>
+<li>Save this file, which will be read every time you use R.</li>
+</ol>
+
+<p>FYI, this <code>.Renevironment file</code> will show up in your computer&rsquo;s home directory which is outside of your RStudio project directory. The exact &ldquo;where&rdquo; depends on your computer&rsquo;s operating system and configuration.</p>
+
+<ol>
+<li>In the exercise file, update the text under the <strong>Project PI&rsquo;s Biosketch</strong>, we need to make a couple of updates</li>
+</ol>
+
+<p>a. Add the following text under the header to give attribution to the <code>rorcid</code> package.</p>
+
+<p><code>_This is auto-populated from your ORCID profile using the @R-rorcid</code>rorcid<code>package._</code></p>
+
+<p>b. Insert code to place the ORCID bio into the PI Biosketch section. Below
+the code chunk, add <code>\</code>r bio` `</p>
+
+<ol>
+<li><p>Save the changes, knit to HTML, and you&rsquo;ll see the biography from your ORCID file now appear in the reproducible report.</p></li>
+
+<li><p>To test that the biosketch will be auto-updated in your  report when your ORCID bio is updated, go to your ORCID account and make a change to your biography. You might add a new accomplishment to the top of the bio, such as <em>Master of Reproducible Reporting</em> or <em>Bends RMarkdown to Her/His Will</em>.</p></li>
+</ol>
+
+<p>When you knit the document to HTML, the <strong>Principal Investigators Biosketch</strong> auto-updates!</p>
+
+<ol>
+<li>Back in your ORCID profile, don&rsquo;t forget to remove the latest change to your bio, if appropriate.</li>
+</ol>
+
+<h2>Wrapup</h2>
 
 </section>
 

@@ -1,0 +1,7 @@
+  fee:
+    choices:
+    - True
+    - False
+    input: select
+    label: 'Include only journals that charge a fee:'
+    value: True
