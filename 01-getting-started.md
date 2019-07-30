@@ -57,6 +57,7 @@ elevated c-Myc _eLife_ 2018; 7:e30274 DOI
 [10.7554/eLife.30274](https://doi.org/10.7554/eLife.30274)
 
 [Zenodo collection](https://zenodo.org/communities/research-compendium/)
+
 [Research compendium setup](https://research-compendium.science/)
 
 ## How can authors fulfill these requirements while making their research reports more Findable, Accessible, Interoperable, and Re-Useable/Reproducible?
