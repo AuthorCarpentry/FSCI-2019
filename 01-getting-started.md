@@ -56,6 +56,9 @@ phenomena and reveals information _Ecology Letters_ 21, 1255-1267 (2018) DOI
 elevated c-Myc _eLife_ 2018; 7:e30274 DOI
 [10.7554/eLife.30274](https://doi.org/10.7554/eLife.30274)
 
+[Zenodo collection](https://zenodo.org/communities/research-compendium/)
+[Research compendium setup](https://research-compendium.science/)
+
 ## How can authors fulfill these requirements while making their research reports more Findable, Accessible, Interoperable, and Re-Useable/Reproducible?
 
 Now we'll show you the final result (on our machine).  
