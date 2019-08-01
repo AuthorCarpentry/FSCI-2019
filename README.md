@@ -13,6 +13,8 @@
 -   Demonstrate an open-source workflow for automatically converting openly authored documents for publication, online posting and professional presentation.
 -   Demonstrate use of the RStudio GUI platform for authoring and producing professional-quality research reports.
 
+[Full Syllabus](https://docs.google.com/document/d/1KF2i1L2Dx-gPoac4GHaLa0TwrmZ4PxGDTzFhY-SwvE0)
+
 ## Topics:
 
 1.  [Day 1: Introduction](01-getting-started.html)
