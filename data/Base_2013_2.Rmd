@@ -143,16 +143,9 @@ Expected Outputs of the project
 |3| Data set documentation | json metadata file | plain text file, .1 MB | Datacite registry database; GitHub public repository; Zenodo repository |
 |4| Data Processing steps  | R scripts and comments | R Notebook file, 1 MB | GitHub public repository |
 |5| Data Visualizations  | R scripts and documentation; Plots | R Notebook file, .png image files 4 MB | GitHub public repository |
-|6| Journal article | Rendered report | RMarkdown, 9 MB| Publisher website,   community preprint server|
-
-
 `Add the following final row of data to the pipe table above:`  
 
-6
-Journal article
-
-
-Publisher website (open access) and 
+6;Journal article;Rendered report;RMarkdown, 9 MB;Publisher website,   community preprint server
 
 
 Metadata
