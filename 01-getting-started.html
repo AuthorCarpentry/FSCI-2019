@@ -25,7 +25,7 @@
 
 <p>2 Hours</p>
 
-<hr>
+<hr />
 
 <h2>Learning Objectives</h2>
 
@@ -38,7 +38,7 @@
 <li>Render a provided reproducible report to multiple outputs using Rstudio, <code>Rmarkdown</code>, and the <code>knitr</code> package</li>
 </ul>
 
-<hr>
+<hr />
 
 <h2>Introductions</h2>
 
@@ -54,7 +54,7 @@
 
 <p>Automation or transformation: has the research paper changed much in the last 350 years (or why static PDFs are an underwhelming use of today&rsquo;s technology)</p>
 
-<p><img src="img/RSjournal.jpeg" alt="Maxwell&rsquo;s discovery of the electromagnetic properties of light" /></p>
+<p><img src="img/RSjournal.jpeg" alt="Maxwell's discovery of the electromagnetic properties of light" /></p>
 
 <p>Original manuscript of James Clerk Maxwell&rsquo;s paper on &lsquo;A dynamical theory of the electromagnetic field&rsquo; published in the oldest scientific journal, <em>Philosophical Transactions</em>, in 1685. According to the publisher, the Royal Society:</p>
 
@@ -142,13 +142,40 @@ the file to your desktop.</li>
 with a new folder called <code>FSCI-2019-files</code>.</li>
 </ol>
 
-<h2>Intro to RStudio and knitting documents</h2>
+<h2>Intro to RStudio, Projects, and Knitting Documents</h2>
 
-<p>Now open RStudio (Applications/Rstudio).  RStudio is the development
-environment where we&rsquo;ll be working on our document.  The main panel you&rsquo;ll see
-on the left is the Console, where you can run R code.  On the right is two
+<p>Now open RStudio (Applications/Rstudio). RStudio is the development
+environment where we&rsquo;ll be working on our document. The main panel you&rsquo;ll see
+on the left is the Console, where you can run R code. On the right are two
 panels - the upper contains your environment (what R can access), and the lower
 contains the files on your computer.</p>
+
+<h3>RStudio Projects</h3>
+
+<p>It&rsquo;s good practice to keep a set of related data, analyses, and text
+self-contained in a single project folder in RStudio (for example in our
+ <code>FSCI-2019-files</code> directory). Working this way makes it easier to move a
+project around on your computer and share it with others without worrying
+about whether or not the underlying scripts will still work.</p>
+
+<p>RStudio provides a helpful set of tools to set up a project through its
+&ldquo;Projects&rdquo; interface, which not only creates a working directory for you, but
+also remembers its location (allowing you to quickly navigate to it from the
+Projects menu at the top right) and optionally preserves custom settings and
+open files to make it easier to resume work after a break.</p>
+
+<p>Let&rsquo;s create a project for the files we&rsquo;ll be working with in this class:</p>
+
+<ol>
+<li>Under the <code>File</code> menu, click on <code>New Project</code>.</li>
+<li>Choose <code>Existing Directory</code>.</li>
+<li>Browse through your local files to find the <code>FSCI-2019-files</code> directory.</li>
+<li>Click on <code>Create Project</code>. An <code>.Rproj</code> file is then automatically added to
+the project folder, with the name of the folder. This file marks the location
+of your project&rsquo;s working directory.</li>
+</ol>
+
+<h3>Package installation</h3>
 
 <p>The first thing to do is install some packages.  RStudio makes it easy to
 install new packages to do things you want.  You can find packages by going to
@@ -173,6 +200,8 @@ lots of files we&rsquo;ll use during the workshop.  Double click on
 <p>You&rsquo;ll see the document open in a new panel on the left hand side of the
 screen.  This is an editor window, and you can change things in the document
 here.  For now, just change the name in the document to your name.</p>
+
+<h3>Knitting a Document</h3>
 
 <p>Knitting is a process in Rstudio that takes a text document and turns it into
 an output (like html, docx, or html slides).  Now click the knit button in the upper
