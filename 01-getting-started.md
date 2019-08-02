@@ -48,7 +48,7 @@ Source: Rallison, S.P., 'What are Journals For?', _Ann R Coll Surg Engl._ 2015 M
 
 1. Hu, Y. et. al. Late Middle Pleistocene Levallois stone-tool technology in
 southwest China _Nature_ 565, 82-85 (2019) DOI
-[10.1038/s41586-018-0710-1](https://doi.org/10.1038/s41586-018-0710-1) 
+[10.1038/s41586-018-0710-1](https://doi.org/10.1038/s41586-018-0710-1)
 2. Boettiger, C. From noise to knowledge: how randomness generates novel
 phenomena and reveals information _Ecology Letters_ 21, 1255-1267 (2018) DOI
 [10.111/ele.13085](https://doi.org/10.1111/ele.13085)
@@ -75,23 +75,23 @@ RStudio on your computer.
 
 ### Windows
 Install R by downloading and running this
-[.exe](https://cran.r-project.org/bin/windows/base/release.htm) file from CRAN. 
+[.exe](https://cran.r-project.org/bin/windows/base/release.htm) file from CRAN.
 Also, please install the [RStudio
-IDE](https://www.rstudio.com/products/rstudio/download/#download). 
-Note that if you have separate user and admin accounts, you should run the 
-installers as administrator (right-click on .exe file and select "Run as administrator" 
+IDE](https://www.rstudio.com/products/rstudio/download/#download).
+Note that if you have separate user and admin accounts, you should run the
+installers as administrator (right-click on .exe file and select "Run as administrator"
 instead of double-clicking). Otherwise problems may occur later, for example when installing R packages.
 
 ### macOS
 Install R by downloading and running this
-[.pkg](https://cran.r-project.org/bin/macosx/R-latest.pkg) file from CRAN. Also, 
+[.pkg](https://cran.r-project.org/bin/macosx/R-latest.pkg) file from CRAN. Also,
 please install the [RStudio
 IDE](https://www.rstudio.com/products/rstudio/download/#download).
 
 ### Linux
 You can download the binary files for your distribution from
-[CRAN](https://cran.r-project.org/index.html). Or you can use your package 
-manager (e.g. for Debian/Ubuntu run sudo apt-get install r-base and for 
+[CRAN](https://cran.r-project.org/index.html). Or you can use your package
+manager (e.g. for Debian/Ubuntu run sudo apt-get install r-base and for
 Fedora run sudo dnf install R). Also, please install the [RStudio
 IDE](https://www.rstudio.com/products/rstudio/download/#download).
 
@@ -105,13 +105,38 @@ the file to your desktop.
 2. If it's not unzipped yet, double-click on it to unzip it. You should end up
 with a new folder called `FSCI-2019-files`.
 
-## Intro to RStudio and knitting documents
+## Intro to RStudio, Projects, and Knitting Documents
 
-Now open RStudio (Applications/Rstudio).  RStudio is the development
-environment where we'll be working on our document.  The main panel you'll see
-on the left is the Console, where you can run R code.  On the right is two
+Now open RStudio (Applications/Rstudio). RStudio is the development
+environment where we'll be working on our document. The main panel you'll see
+on the left is the Console, where you can run R code. On the right are two
 panels - the upper contains your environment (what R can access), and the lower
-contains the files on your computer.  
+contains the files on your computer.
+
+### RStudio Projects
+
+It's good practice to keep a set of related data, analyses, and text
+self-contained in a single project folder in RStudio (for example in our
+ `FSCI-2019-files` directory). Working this way makes it easier to move a
+project around on your computer and share it with others without worrying
+about whether or not the underlying scripts will still work.
+
+RStudio provides a helpful set of tools to set up a project through its
+"Projects" interface, which not only creates a working directory for you, but
+also remembers its location (allowing you to quickly navigate to it from the
+Projects menu at the top right) and optionally preserves custom settings and
+open files to make it easier to resume work after a break.
+
+Let's create a project for the files we'll be working with in this class:
+
+1. Under the `File` menu, click on `New Project`.
+2. Choose `Existing Directory`.
+3. Browse through your local files to find the `FSCI-2019-files` directory.
+4. Click on `Create Project`. An `.Rproj` file is then automatically added to
+the project folder, with the name of the folder. This file marks the location
+of your project's working directory.
+
+### Package installation
 
 The first thing to do is install some packages.  RStudio makes it easy to
 install new packages to do things you want.  You can find packages by going to
@@ -135,11 +160,13 @@ You'll see the document open in a new panel on the left hand side of the
 screen.  This is an editor window, and you can change things in the document
 here.  For now, just change the name in the document to your name.  
 
+### Knitting a Document
+
 Knitting is a process in Rstudio that takes a text document and turns it into
 an output (like html, docx, or html slides).  Now click the knit button in the upper
-left hand corner of the editor. The first time you do this you'll get a message 
-that you need to install some packages. Click Yes and wait for the packages to 
-install. Once the installation finishes, you will see an interactive demonstration 
+left hand corner of the editor. The first time you do this you'll get a message
+that you need to install some packages. Click Yes and wait for the packages to
+install. Once the installation finishes, you will see an interactive demonstration
 document!
 
 You can output this single file in multiple formats. By default we've been
@@ -154,7 +181,7 @@ You can also select other output forms that aren't listed in the `knitr`
 dropdown. Take a look at the document. You'll see in the top a section called
 `output` with sections under it like `html_document`.  If we change the top
 output knit will produce a different result.  Try replacing `word_document`
-with `slidy_presentation`.  This is a html presentation that you can use in 
+with `slidy_presentation`.  This is a html presentation that you can use in
 any web browser.
 
 Tomorrow we'll start working with an actual research report!
