@@ -52,8 +52,8 @@ This work was the start of the LaTeX environment and other tools for building
 interactive documents (Knuth, D. (1992). Literate Programming. Center for the Study of Language and
 Information, Stanford, California).  Modern research compendium in R were first
 described by Gentelman and Lang in ([Statistical Analyses and Reproducible
-Research](https://biostats.bepress.com/bioconductor/paper2/)) (May 2004). 
-Bioconductor Project Working Papers. Working Paper 2.
+Research](https://biostats.bepress.com/bioconductor/paper2/) (May 2004). 
+Bioconductor Project Working Papers. Working Paper 2.).
 
 ## What are some examples of reproducible reports?
 
