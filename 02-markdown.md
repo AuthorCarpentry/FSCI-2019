@@ -47,7 +47,7 @@ with `R Markdown` syntax to clarify its meaning and polish its appearance.
 HTML, Word, or another output format. We will ignore the code chunks until a
 bit later in the week, when we take on dynamic reporting elements.
 
-## How R Knits Documents
+## How RStudio Knits Documents
 
 RStudio relies on a stack of technologies that work together to make plain text 
 authoring simple, reliable, enjoyable, and powerful. This conceptual stack is 
