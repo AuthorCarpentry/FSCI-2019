@@ -140,7 +140,7 @@ meaning. For example,
 
 2. Add emphasis to the text, where appropriate, using single or double asterisks or single or double underscores. either type of character works, as long as it is matched on both sides of the emphasized phrase. You may find text phrases in want of emphasis include the phrase "Not Applicable"; the title of the Project; and titles of publications.
 
-3. Superscripts and subscripts can be added by surrounding the text with the symbols \^ and \~ , respectively. Find one phrase in the 'Project Description' section in want of a superscript and another, a subscript. Mark these occurrences up accordingly.
+3. Superscripts and subscripts can be added by surrounding the text with the symbols ^ and \~ , respectively. Find one phrase in the 'Project Description' section in want of a superscript and another, a subscript. Mark these occurrences up accordingly.
 
 4. Find two quoted text blocks and insert the \> symbol at the beginning of each to markup these passages as blockquotes (maybe you remember this from old e-mail programs?)
 
