@@ -44,6 +44,17 @@ Photograph: Royal Society's collections
 
 Source: Rallison, S.P., 'What are Journals For?', _Ann R Coll Surg Engl._ 2015 Mar; 97(2): 89-91. DOI: 10.1308/003588414X14055925061397
 
+## How did the idea of reproducible reports develop?
+
+The intial development of a reproducible report that included text and code
+was the concept of Literate Programming developed by Donaly Knuth.  
+This work was the start of the LaTeX environment and other tools for building
+interactive documents (Knuth, D. (1992). Literate Programming. Center for the Study of Language and
+Information, Stanford, California).  Modern research compendium in R were first
+described by Gentelman and Lang in ([Statistical Analyses and Reproducible
+Research](https://biostats.bepress.com/bioconductor/paper2/)) (May 2004). 
+Bioconductor Project Working Papers. Working Paper 2.
+
 ## What are some examples of reproducible reports?
 
 1. Hu, Y. et. al. Late Middle Pleistocene Levallois stone-tool technology in
@@ -58,7 +69,7 @@ elevated c-Myc _eLife_ 2018; 7:e30274 DOI
 
 [Zenodo collection](https://zenodo.org/communities/research-compendium/)
 
-[Research compendium setup](https://research-compendium.science/)
+[Research compendium resources](https://research-compendium.science/)
 
 ## How can authors fulfill these requirements while making their research reports more Findable, Accessible, Interoperable, and Re-Useable/Reproducible?
 

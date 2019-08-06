@@ -26,7 +26,7 @@ It's time to start building your own Reproducible Report! The course
 instructors have prepared all the content as text and script files, so you can
 focus on learning R Markdown. Let's go step by step:
 
-#### Step 1.
+### Setting up your file
 
 In RStudio, navigate through the `Files` pane to the `FSCI-2019-files`
 subfolder and open the exercise file `Base_2013_2.Rmd`. Immediately save it as
@@ -34,7 +34,7 @@ subfolder and open the exercise file `Base_2013_2.Rmd`. Immediately save it as
 'Base_2013.Rmd' file during this lesson.  By the end of the course, that
 file will be ready to publish online, showcasing your open authoring skills!
 
-#### Step 2. Note that the `.Rmd` exercise file has three main components:
+### Organization of our `.Rmd` exercise file:
 
 * `YAML Header`  YAML ("YAML Ain't Markup Language") contains document metadata
 that `knitr` and `pandoc` need to properly render the document and produce an
@@ -47,8 +47,67 @@ with `R Markdown` syntax to clarify its meaning and polish its appearance.
 HTML, Word, or another output format. We will ignore the code chunks until a
 bit later in the week, when we take on dynamic reporting elements.
 
-#### Step 3. Edit the exercise file `Base_2013.md` per the following instructions:
+## How R Knits Documents
 
+RStudio relies on a stack of technologies that work together to make plain text 
+authoring simple, reliable, enjoyable, and powerful. This conceptual stack is 
+represented below.
+(Figure copied from RStudio, "How It Works", https://rmarkdown.rstudio.com/lesson-2.html)
+
+![Rmarkdown workflow](img/rmarkdownflow.png)
+
+### RMarkdown
+
+Markdown is a set of simple markup annotations for plain text files. 
+R Markdown files (`.Rmd`) rely on a variant of Markdown known as [Pandoc's Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown). 
+
+According to RStudio's [Markdown Basics](https://rmarkdown.rstudio.com/lesson-8.html) tutorial, 
+you can use Pandoc's Markdown to create the following elements in an RMarkdown file:
+
+* Headers
+* Lists
+* Links
+* Images
+* Block quotes
+* Latex equations
+* Horizontal rules
+* Pipe tables
+* Footnotes
+* Bibliographies and Citations
+* Slide breaks
+* Italicized text
+* Bold text
+* Superscripts
+* Subscripts
+* Strikethrough text
+
+#### Recommended resources on RMarkdown
+
+* RStudio, *RMarkdown Homepage*, https://rmarkdown.rstudio.com/  
+* RStudio *RMarkdown Formats*, https://rmarkdown.rstudio.com/formats.html
+* Yihui Xie, J. J. Allaire, and Garrett Grolemund, 2018.  *R Markdown: The Definitive Guide*, https://bookdown.org/yihui/rmarkdown/
+
+### Knitr
+
+Knitr is an R package that executes all of the code chunks and inline code in an 
+Rmarkdown document. It then creates a new markdown (`.md`) document which includes the code and its output. 
+
+#### Recommended resources on Knitr
+
+* Yihui Xie, *knitr: elegant, flexible, and fast dynamic report generation with R*, https://yihui.name/knitr/  
+* Yihui Xie, *Dynamic Documents with R and knitr*, Second Edition (Chapman & Hall/CRC The R Series) 2nd Edition, also online at: https://github.com/yihui/knitr-book
+
+### Pandoc
+
+Pandoc is considered the swiss army knife of document converters because it can transform a number of different markup formats such as .md or .html to many other formats, such as .doc, .pdf, html_slides, etc. Pandoc is also able to render rferences in a document to properly-formatted citations that follow a particular citation style.
+
+Pandoc is a command line tool that is independent from R. However, it comes bundled with R Studio because Rmarkdown relies on it for document conversion.
+
+#### Recommended resources on Pandoc
+
+* *Pandoc, A Universal Document Converter*, https://pandoc.org/
+
+## Use basic RMarkdown formatting `Base_2013.md` to control how the document is displayed:
 
 **YAML Header**
 
