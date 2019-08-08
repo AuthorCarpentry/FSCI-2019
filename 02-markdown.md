@@ -342,6 +342,19 @@ service](https://citation.crosscite.org/) and select **bibtex** as the citation
 style. Copy the BibTeX code into oajournals.bib, change the long default
 citation key to `Vasilevsky_2017`, and check that the citation is now correct.
 
+The citation style defaults to Chicago.  If you want a different citation
+style, you can download a csl style file from the
+[Zotero style registry](https://www.zotero.org/styles).  Download your favorite
+citation style and put it in your directory. You add the citation
+style file by using the csl section of the YAML (this is a new section, like
+bibliography):
+
+```
+csl: american-chemical-society.csl
+```
+
+After knitting, you'll see the citation style change.
+
 ## Embedded Sub-Documents and Math
 
 To date we've been writing everything in one R Markdown document. We can

@@ -379,6 +379,18 @@ service</a> and select <strong>bibtex</strong> as the citation
 style. Copy the BibTeX code into oajournals.bib, change the long default
 citation key to <code>Vasilevsky_2017</code>, and check that the citation is now correct.</p>
 
+<p>The citation style defaults to Chicago.  If you want a different citation
+style, you can download a csl style file from the
+<a href="https://www.zotero.org/styles">Zotero style registry</a>.  Download your favorite
+citation style and put it in your directory. You add the citation
+style file by using the csl section of the YAML (this is a new section, like
+bibliography):</p>
+
+<pre><code>csl: american-chemical-society.csl
+</code></pre>
+
+<p>After knitting, you&rsquo;ll see the citation style change.</p>
+
 <h2>Embedded Sub-Documents and Math</h2>
 
 <p>To date we&rsquo;ve been writing everything in one R Markdown document. We can
