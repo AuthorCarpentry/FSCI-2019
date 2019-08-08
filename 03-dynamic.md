@@ -39,19 +39,23 @@ Save the changes to the exercise file and knit to HTML and Word. Can you find th
 
 ## Auto-generate bibliography files
 
-Have you wondered why the YAML in the exercise file contains two separate bibliography files (`oajournals.bib` and `packages.bib`)? Why not make one concatenated file?
+It's good practice to cite the software you use during your research project. `R` packages are continually 
+updated in the [The Comprehensive R Archive Network, CRAN](https://cran.r-project.org/). If we manually maintained 
+the bibliography file we'd be editing it continually to reflect the new version of any `R` package we use.
 
-The reason for the two files is that some of the references cited in our reproducible report represent `R` packages used to generate the report. `R` packages are continually updated in the [The Comprehensive R Archive Network, CRAN](https://cran.r-project.org/). If we manually maintained the bibliography file we'd be editing it continually to reflect the new version of any `R` package we use.
-
-Alternatively, we can use the `write_bib.R` function in `knitr` to dynamically generate a `packages.bib` file for all the R packages referenced in the report. This more powerful and efficient form of literate programming provides certainty that the references are always up-to-date!
+Alternatively, we can use the `write_bib.R` function in `knitr` to dynamically
+generate a `packages.bib` file for all the R packages we want to reference in the report. This more powerful 
+and efficient form of literate programming provides certainty that the references are always up-to-date!
 
 In this exercise, let's add the citation for the `DT` and the  `rorcid` packages that we'll be using later on in this lesson.  
 
-1. Open `packages.bib` file to see that it currently does not include a citation for `DT` or `rorcid`. Close that file.
+1. Delete to `packages.bib` file that was included in the file download
 2. Open the script file `write_bib.R` and on the third line -- the one that starts with `write_bib(c("tidyverse"...)` add `DT` and `rorcid`, each in quotes, to the list of packages you want references for.
 3. Save the changes to `write_bib.R`
 4. Select all of the code in  `write_bib.R` with your mouse. Once it is all highlighted, press `command+enter` to execute the code. You can watch the code run in your console window.
-5. Open `packages.bib` file once again to see that it now includes a citation for the `DT` and `rorcid` packages we'll be using in a bit. Close that file and put a smiley sticky on your laptop to signify happiness. 
+5. Open `packages.bib` file once again to see that it now includes a citation for the `DT` and `rorcid` packages we'll be using in a bit.
+6. Add `packages.bib` to your YAML header and add software references to your
+report. 
 
 ## Building in User Interaction (Part 1)
 
@@ -105,15 +109,20 @@ Let's parameterize our exercise file to demonstrate the power of this dynamic re
 
 1. Open the file `insert_params.txt` and copy all of the code. Close the file.
 
-2. In the YAML header of the exercise file ( at the bottom, before the three ending dashes), paste in the copied code `r params$institution`. If you wish to change the names of any of the Institutions listed, feel free to do so. Just make sure there are at least four Institutions included in the list. Save the changes.
+2. In the YAML header of the exercise file ( at the bottom, before the three ending dashes), paste in the copied code. 
+If you wish to change the names of any of the Institutions listed, feel free to do so. Just make sure there are at least four Institutions included in the list. Save the changes.
 
 3. In the the body text of the exercise file, find five occurrences of an Institution name. To find the occurrences in the main body of the text, use the 'Find' option under RStudio's Edit menu. Replace each occurrence of an Institution name with the code ``r params$institution``.  When you `knit with parameters`, the inline R code will automatically write in the name of your selected Institution.
 
-4. Knit to HTML and find six occurrences of your auto-populated Institution name.
+4. In the YAML header edit the author so that it's not a string, and add ``r
+params$institution`` in the spot where the affiliation would go
 
-Paramters can do more than control text. Let's use a paramter to make changes to a graph
+5. Knit to HTML and find six occurrences of your auto-populated Institution name.
 
-1. Open the file `insert_params2.txt` and copy all of the code. Close the file and paste the code into the YAML header
+Paramters can do more than control text. Let's use a parameter to make changes to a graph
+
+1. Open the file `insert_params2.txt` and copy all of the code. Close the file
+and paste the code into the parameters section of the YAML header.
 
 2. Open the file `insert_plot2_params.txt` and copy all the code. Close the
 file and paste the code into the plot code chunk titled `plot_license`
