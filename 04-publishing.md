@@ -119,7 +119,7 @@ a. Add the following text under the header to give attribution to the
 `_This is auto-populated from your ORCID profile using the @R-rorcid package._`
 
 b. Insert code to place the ORCID bio into the PI Biosketch section. Below
-    the code chunk, add ``r bio``.
+    the code chunk, add `` `r bio` ``.
 
 8. Save the changes, knit to HTML, and you'll see the biography from your
 ORCID file now appear in the reproducible report.
@@ -127,7 +127,7 @@ ORCID file now appear in the reproducible report.
 9. To test that the biosketch will be auto-updated in your report when your
 ORCID bio is updated, go to your ORCID account and make a change to your
 biography. You might add a new accomplishment to the top of the bio, such
-as *Master of Reproducible Reporting* or *Bends RMarkdown to Their Will*.
+as *Master of Reproducible Reporting* or *Bends R Markdown to Their Will*.
 
 When you knit the document to HTML, the **Principal Investigators Biosketch**
 auto-updates!
