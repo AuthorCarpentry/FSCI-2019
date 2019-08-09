@@ -112,12 +112,13 @@ on your computer's operating system and configuration.
 
 7. In the exercise file, under the **Project PI's Biosketch** section, we
 need to make a couple of updates:
-    a. Add the following text under the header to give attribution to the
+
+a. Add the following text under the header to give attribution to the
     `rorcid` package:
 
 `_This is auto-populated from your ORCID profile using the @R-rorcid package._`
 
-    b. Insert code to place the ORCID bio into the PI Biosketch section. Below
+b. Insert code to place the ORCID bio into the PI Biosketch section. Below
     the code chunk, add ``r bio``.
 
 8. Save the changes, knit to HTML, and you'll see the biography from your
